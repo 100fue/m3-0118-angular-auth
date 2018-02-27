@@ -14,10 +14,7 @@ const userSchema = new Schema({
     type: String,
     required: [true, 'email is required']
   },
-  photo: {
-    type: String,
-    required: [true, 'photo is required']
-  }
+  photo: String
 }, {
     timestamps: {
       createdAt: 'created_at',

@@ -13,7 +13,7 @@ let loginPromise = (req, user) => {
 
 /* SIGNUP */
 router.post('/signup', (req, res, next) => {
-  const {username,password} = req.body;
+  const {username,password,email} = req.body;
   if (!username || !password) return res.status(400).json({ message: 'Provide username and password' })
   User.findOne({ username }, '_id')
     .then(foundUser =>{
@@ -22,10 +22,11 @@ router.post('/signup', (req, res, next) => {
       const hashPass = bcrypt.hashSync(password, salt);
       const theUser = new User({
         username,
-        password: hashPass
+        password: hashPass,
+        email
       });
       return theUser.save()
-          .then(user => loginPromise(req,user))
+          // .then(user => loginPromise(req,user))
           .then(user => {
             debug(`Registered user ${user._id}. Welcome ${user.username}`);
             res.status(200).json(req.user)
@@ -37,7 +38,7 @@ router.post('/signup', (req, res, next) => {
     }) 
 });
 
-
+/* LOGIN */
 router.post('/login', (req, res, next) => {
   passport.authenticate('local', (err, theUser, failureDetails) => {
     if (err) return res.status(500).json({ message: 'Something went wrong' });
@@ -48,11 +49,13 @@ router.post('/login', (req, res, next) => {
   })(req, res, next);
 });
 
+/* LOGOUT */
 router.get('/logout', (req, res, next) => {
   req.logout();
   res.status(200).json({ message: 'Success' });
 });
 
+/* LOGGEDIN */
 router.get('/loggedin', (req, res, next) => {
   if (req.isAuthenticated()) return res.status(200).json(req.user);
   res.status(403).json({ message: 'Unauthorized' });

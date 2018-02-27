@@ -28,12 +28,14 @@ const animalSchema = new Schema({
             required: [true, 'lng is required']
         }
     },
-    photos: {
-        type: [String],
+    photos: [{
+        type: String,
         required: [true, 'photos are required']
-    },
-    videos: [String],
-    required: [true, 'videos are required']
+    }],
+    videos: [{
+        type: String,
+        required: [true, 'videos are required']
+    }]
 
 }, {
         timestamps: {

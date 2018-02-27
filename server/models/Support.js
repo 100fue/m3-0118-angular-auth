@@ -1,16 +1,16 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const inputSchema = new Schema({
+const supportSchema = new Schema({
     userId: {
         type: Schema.Types.ObjectId,
         ref: 'User'
     },
-    userId: {
+    animalId: {
         type: Schema.Types.ObjectId,
         ref: 'Animal'
     },
-    input: Number
+    support: Number
 }, {
         timestamps: {
             createdAt: 'created_at',
@@ -18,5 +18,5 @@ const inputSchema = new Schema({
         }
     });
 
-const Input = mongoose.model('User', inputSchema);
-module.exports = Input;
+const Support = mongoose.model('User', supportSchema);
+module.exports = Support;
