@@ -1,1 +1,92 @@
-/* You can add global styles to this file, and also import other style files */
+img{
+    max-width: 100%;
+}
+
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav{
+    width: 100%;
+    position: fixed!important;
+    z-index: 9;
+}
+
+.nav-link{
+    font-size: 12px;
+    margin-left: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+nav div#nav{
+    justify-content: flex-end;
+}
+
+section#banner{
+    height: 100vh;
+    background: url("./img/cow-home.png") center center no-repeat fixed;
+    background-size: cover; 
+    position: relative;
+}
+
+section#banner div#cont{
+    position: absolute;
+    top: 50%;
+    left: 100px;
+    transform: translateY(-50%);
+}
+
+section#banner div#cont h1{
+    text-transform: uppercase;
+    line-height: 55px;
+}
+
+section#banner div#cont h1 span{
+    display: block;
+}
+
+section#banner div#cont h1 span#s1{
+    font-weight: 300;
+    color: #fff;
+    font-size: 45px;
+}
+
+section#banner div#cont h1 span#s2{
+    color: #fff;
+    font-size: 75px;
+}
+
+section#banner div#cont h1 span#s3{
+    font-size: 32.5px;
+    color: #352e2c;
+}
+
+section#banner div#cont div#support{
+    margin-top: 15px;
+}
+
+section#banner div#cont div#support a{
+    background: #352e2c;
+    padding: 7px 30px;
+    font-size: 24px;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 3px 0 0 3px;
+}
+
+section#banner div#cont div#support i{
+    padding: 3px 14px 3px;
+    background: #fff;
+    font-size: 25px;
+    color: #352e2d;
+    display: inline-block;
+    margin-left: -5px;
+    border-radius: 0 3px 3px 0;
+}
+
+section#banner-2{
+    height: 100vh;
+    background: url("./img/cow-home-2.png") center center no-repeat fixed;
+    background-size: cover; 
+}

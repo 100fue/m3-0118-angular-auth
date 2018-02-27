@@ -8,17 +8,9 @@ import { SessionService } from '../../services/session.service';
 })
 export class HomeComponent implements OnInit {
 
-  error: string
-
   constructor(public session: SessionService) { }
 
   ngOnInit() {
-  }
-
-  logout() {
-    this.session.logout()
-      .catch(e => this.error = e)
-      .subscribe();
   }
 
 }
