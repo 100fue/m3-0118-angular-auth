@@ -10,8 +10,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class SingleAnimalComponent implements OnInit {
 
   list: Array<any>;
+  
 
-  constructor(public Rs: SessionService, private router: Router,
+  constructor(public session: SessionService, private router: Router,
     private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -21,8 +22,10 @@ export class SingleAnimalComponent implements OnInit {
   }
 
   getListAnimal(id) {
-    this.Rs.get(id)
+    this.session.get(id)
       .subscribe((l) => {
+        console.log('QQQ')
+        console.log(l)
         this.list = l;
       });
   }

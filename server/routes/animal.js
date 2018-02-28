@@ -10,9 +10,10 @@ router.get('/list', (req, res, next) => {
         .catch(err => res.json(err).status(500));
 });
 
-router.get('/:id', (req, res, next) => {
+router.get('/list/:id', (req, res, next) => {
     Animal.findById(req.params.id)
         .then(animal=>{
+            console.log(animal)
             res.json(animal).status(200);
         })
         .catch(err => res.json(err).status(500));

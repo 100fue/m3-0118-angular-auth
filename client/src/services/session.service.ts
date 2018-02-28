@@ -24,7 +24,7 @@ export class SessionService {
   getUser(){
     return this.user;
   }
-  
+
   private configureUser(set=false){
     return (user) => {
       if(set){
@@ -39,12 +39,12 @@ export class SessionService {
   }
 
   getList() {
-    return this.http.get(`${this.dbName}/api/animal/list`)
+    return this.http.get(`${this.dbName}/api/animal/list`, this.options)
       .map((res) => res.json());
   }
 
   get(id) {
-    return this.http.get(`${this.dbName}/api/animal/list/${id}`)
+    return this.http.get(`${this.dbName}/api/animal/list/${id}`, this.options)
       .map((res) => res.json());
   }
 
