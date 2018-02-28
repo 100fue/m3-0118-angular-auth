@@ -1,11 +1,33 @@
 <section id="single-animal" class="container">
   <div class="row">
-    <div class="col-md-6">
-      <h1>paco</h1>
-      <span>{{list?.name}}</span>
+    <i class="ion-ios-arrow-thin-left"></i>
+    <h1 class="col-md-12">HELLO <span>{{list?.name}}</span></h1>
+    <div class="img-an col-md-6">
+      <span>{{list?.time}}</span>
+      <img src="{{list?.photos[0]}}" alt="">
     </div>
-    <div class="col-md-6">
-
+    <div id="info-an" class="col-md-6">
+      <div class="div-inf">
+        <i class="ion-pricetag"></i>
+        <div class="cont-in-an">
+          <h2>Name</h2>
+          <span>{{list?.name}}</span>
+        </div>
+      </div>
+      <div class="div-inf">
+        <i class="ion-ios-heart"></i>
+        <div class="cont-in-an">
+          <h2>Age</h2>
+          <span>{{list?.age}}</span>
+        </div>
+      </div>
+      <div class="div-inf">
+        <i class="ion-ios-basketball"></i>
+        <div class="cont-in-an">
+          <h2>Hobbies</h2>
+          <span>{{list?.hobbies}}</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>

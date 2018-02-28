@@ -117,4 +117,44 @@ section#single-animal{
     padding-top: 140px;
 }
 
+section#single-animal div.img-an img{
+    border-radius: 10px;
+}
+
+section#single-animal div#info-an div.div-inf{
+    border-bottom: 1px solid #e6e6e6;
+    display: flex;
+    padding: 30px 20px;
+}
+
+section#single-animal div#info-an div.div-inf:first-child{
+    padding-top: 20px;
+}
+
+section#single-animal div#info-an div.div-inf:last-child{
+    border-bottom: none;
+}
+
+section#single-animal div#info-an div.div-inf div.cont-in-an{
+    margin-left: 40px;
+}
+
+section#single-animal div#info-an div.div-inf div.cont-in-an h2{
+    color: #b4b8bb;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+section#single-animal div#info-an div.div-inf div.cont-in-an span{
+    color: #352e2c;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+section#single-animal div#info-an div.div-inf i{
+    font-size: 30px;
+    margin-top: -5px;
+    color: #ff9800;
+}
+
 /* SINGLE ANIMAL */
