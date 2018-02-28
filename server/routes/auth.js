@@ -29,6 +29,7 @@ router.post('/signup', (req, res, next) => {
           // .then(user => loginPromise(req,user))
           .then(user => {
             debug(`Registered user ${user._id}. Welcome ${user.username}`);
+            req.user = user
             res.status(200).json(req.user)
           }) 
     })

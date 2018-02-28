@@ -9,6 +9,8 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
 import { RouterModule } from '@angular/router';
 import { routes } from "./routes";
 import { HomeComponent } from './home/home.component';
+import { ListComponent } from './list/list.component';
+import { SingleAnimalComponent } from './single-animal/single-animal.component';
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import { HomeComponent } from './home/home.component';
     AppComponent,
     LoginFormComponent,
     SignupFormComponent,
-    HomeComponent
+    HomeComponent,
+    ListComponent,
+    SingleAnimalComponent
   ],
   imports: [
     BrowserModule,

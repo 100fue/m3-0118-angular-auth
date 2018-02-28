@@ -10,6 +10,7 @@ const mongoose = require('mongoose');
 const {dbURL} = require('./config');
 const cors = require('cors');
 const auth = require('./routes/auth');
+const animal = require('./routes/animal');
 
 const app = express();
 
@@ -51,6 +52,7 @@ app.use(session({
 }));
 
 require('./passport')(app)
+app.use('/api/animal', animal);
 
 app.use('/api/auth', auth);
 

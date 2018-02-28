@@ -44,5 +44,5 @@ const animalSchema = new Schema({
         }
     });
 
-const Animal = mongoose.model('User', animalSchema);
+const Animal = mongoose.model('Animal', animalSchema);
 module.exports = Animal;
