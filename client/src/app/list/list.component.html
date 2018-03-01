@@ -2,7 +2,7 @@
   <div class="row">
     <article class="col-md-3" *ngFor="let l of list">
       <div>
-        <span>{{ l.time }}</span>
+        <span class="timer"></span>
         <img src="{{ l.photos }}" alt="{{ l.name }}">
         <h2> {{ l.name }} </h2>
         <a [routerLink]="['/list', l._id]"> View Recipe </a>  
