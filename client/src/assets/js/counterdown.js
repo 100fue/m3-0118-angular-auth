@@ -1,34 +1,31 @@
-$( document ).ready(function() {
-    
-// Set the date we're counting down to
-const countDownDate = new Date("Sep 5, 2018 15:37:25").getTime();
+$(document).ready(function () {
 
-let x = setInterval(function () {
+    // Set the date we're counting down to
+    const countDownDate = new Date("Sep 5, 2018 15:37:25").getTime();
 
-    // Get todays date and time
-    let now = new Date().getTime();
+    let x = setInterval(() => {
 
-    // Find the distance between now an the count down date
-    let distance = countDownDate - now;
+        // Get todays date and time
+        let now = new Date().getTime();
 
-    // Time calculations for days, hours, minutes and seconds
-    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        // Find the distance between now an the count down date
+        let distance = countDownDate - now;
 
-    // Display the result in the element with id="demo"
-    $(".timer").text(days + "d " + hours + "h "
-        + minutes + "m " + seconds + "s ");
+        // Time calculations for days, hours, minutes and seconds
+        let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    // If the count down is finished, write some text 
-    // if (distance < 0) {
-    //     clearInterval(x);
-    //     document.getElementById("timer").innerHTML = "EXPIRED";
-    // }
-}, 1000);
+        // Display the result in the element with id="demo"
+        $(".timer").text(days + "d " + hours + "h "
+            + minutes + "m " + seconds + "s ");
 
-
-
+        // If the count down is finished, write some text 
+        // if (distance < 0) {
+        //     clearInterval(x);
+        //     document.getElementById("timer").innerHTML = "EXPIRED";
+        // }
+    }, 1000);
 
 });

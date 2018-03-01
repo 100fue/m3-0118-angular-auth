@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const animalSchema = new Schema({
     time: {
-        type: Number,
+        type: String,
         required: [true, 'time is required']
     },
     name: {
