@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SessionService } from '../../services/session.service';
+import { AnimalService } from '../../services/animal.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -17,7 +17,7 @@ export class SingleAnimalComponent implements OnInit {
   seconds
   
 
-  constructor(public session: SessionService, private router: Router,
+  constructor(public AnimalSession: AnimalService, private router: Router,
     private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -27,7 +27,7 @@ export class SingleAnimalComponent implements OnInit {
   }
 
   getAnimal(id) {
-    this.session.get(id)
+    this.AnimalSession.getAnimal(id)
       .map(a => {
         this.animal = a
         this.timer = this.animal.time

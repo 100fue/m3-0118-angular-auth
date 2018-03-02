@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SessionService } from '../../services/session.service';
+import { AnimalService } from '../../services/animal.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -10,17 +10,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ListComponent implements OnInit {
 
   list
-  timer
-  days
-  hours
-  minutes
-  seconds
 
-  constructor(public session: SessionService) {
+  constructor(public AnimalSession: AnimalService) {
   }
 
   ngOnInit() {
-    this.session.getList()
+    this.AnimalSession.getList()
     .map(list => {
       this.list = list
       this.list.forEach(element => {
@@ -38,7 +33,7 @@ export class ListComponent implements OnInit {
     let x = setInterval(() => {
 
       // Get todays date and time
-      let timer = new Date().getTime();
+      let timer:any = new Date().getTime();
 
       // Find the distance between now an the count down date
       let distance = countDownDate - timer;

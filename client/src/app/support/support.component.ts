@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SessionService } from '../../services/session.service';
+import { AnimalService } from '../../services/animal.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -9,9 +9,28 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class SupportComponent implements OnInit {
 
-  constructor() { }
+  support
+  id: String
+  error: String
+  
+
+  constructor(public AnimalSession: AnimalService,  private router: Router,
+    private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.params.subscribe(params => {
+      this.id = params['id'];
+    });
+  }
+
+  newSupport(support) {
+    console.log(support)
+    this.AnimalSession.newSupport(support, this.id)
+      .catch(e => this.error = e)
+      .subscribe(data => {
+        console.log(data)
+        //this.router.navigate(['login'])
+      });
   }
 
 }

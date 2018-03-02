@@ -38,16 +38,6 @@ export class SessionService {
     }
   }
 
-  getList() {
-    return this.http.get(`${this.dbName}/api/animal/list`, this.options)
-      .map((res) => res.json());
-  }
-
-  get(id) {
-    return this.http.get(`${this.dbName}/api/animal/list/${id}`, this.options)
-      .map((res) => res.json());
-  }
-
   handleError(e) {
     console.log(e);
     return Observable.throw(e.json().message);

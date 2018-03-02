@@ -13,7 +13,7 @@ export const routes: Routes = [
     { path: 'signup', component: SignupFormComponent},
     { path: 'list', component: ListComponent},
     { path: 'list/:id', component: SingleAnimalComponent},
-    { path: 'list/:id/support', component: SupportComponent},
+    { path: 'support/:id', component: SupportComponent},
     { path: 'panel-control', component: PanelControlComponent},
     { path: '**', redirectTo: ""}
 ];
