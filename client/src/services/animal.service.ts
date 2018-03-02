@@ -29,7 +29,7 @@ export class AnimalService {
 
 
     newSupport(support,id) {
-        return this.http.post(`${this.dbName}/api/animal/list/${id}/support`, support, this.options)
+        return this.http.post(`${this.dbName}/api/animal/list/${id}/support`, {support}, this.options)
             .map((res) => res.json());
     }
 

@@ -10,9 +10,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class SupportComponent implements OnInit {
 
   support
-  id: String
-  error: String
-  
+  id
+  error
 
   constructor(public AnimalSession: AnimalService,  private router: Router,
     private route: ActivatedRoute) { }
