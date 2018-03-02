@@ -11,6 +11,8 @@ import { routes } from "./routes";
 import { HomeComponent } from './home/home.component';
 import { ListComponent } from './list/list.component';
 import { SingleAnimalComponent } from './single-animal/single-animal.component';
+import { SupportComponent } from './support/support.component';
+import { PanelControlComponent } from './panel-control/panel-control.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { SingleAnimalComponent } from './single-animal/single-animal.component';
     SignupFormComponent,
     HomeComponent,
     ListComponent,
-    SingleAnimalComponent
+    SingleAnimalComponent,
+    SupportComponent,
+    PanelControlComponent
   ],
   imports: [
     BrowserModule,

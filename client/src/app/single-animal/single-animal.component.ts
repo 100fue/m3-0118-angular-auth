@@ -36,7 +36,6 @@ export class SingleAnimalComponent implements OnInit {
       .subscribe();
   }
 
-  
   counterdown() {
     // Set the date we're counting down to
     console.log('animal time', this.animal.time)

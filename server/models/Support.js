@@ -18,5 +18,5 @@ const supportSchema = new Schema({
         }
     });
 
-const Support = mongoose.model('User', supportSchema);
+const Support = mongoose.model('Support', supportSchema);
 module.exports = Support;
