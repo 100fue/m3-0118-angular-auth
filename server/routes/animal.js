@@ -18,22 +18,20 @@ router.post('/list/:id/support', (req, res, next) => {
     animalId = req.params.id;
     support = req.body.support;
 
-    console.log('AAAA', support)
+    return Promise.all([
+        new Support({ userId, animalId, support }).save(),
+        Animal.findById(animalId),
+    ])
+    .then(([newSupport, animal]) => {
+        const newAnimalTime = getNewAnimalTime(animal, newSupport);
+        return Animal.findByIdAndUpdate(animalId, { time: newAnimalTime }, { new: true })
+            .then((animal) => res.status(200).json(animal));
 
-    new Support({
-        userId,
-        animalId,
-        support
-    }).save()
-
-    Animal.findByIdAndUpdate(
-        animalId,
-        { support },
-        { new: true })
-        .then(updatedSupport => res.status(200).json(updatedSupport))
-        .catch(e =>
-            res.status(500).json(e)
-        )
+    })
+    .catch(e => {
+        console.log(e);
+        res.status(500).json(e)
+    })
 });
 
 router.get('/list/:id', (req, res, next) => {
@@ -45,37 +43,33 @@ router.get('/list/:id', (req, res, next) => {
         .catch(err => res.json(err).status(500));
 });
 
-// function setTimeAnimal() {
-//     var countDownDate = new Date(Animal.collection.time).getTime();
-//     const a1uno = 7200000;
-//     const a5once = 39600000;
-//     const a10veinticuatro = 86400000;
+function getNewAnimalTime(animal, newSupport) {
+    let countDownDate = new Date(animal.time).getTime();
 
-//     if (Animal.collection.time == 1) {
-//         var sum = a1uno + countDownDate;
-        
-//         var curdate = new Date(null);
-//         curdate.setTime(sum);
-//         var support = curdate.toLocaleString();
-//     }
+    const oneHour = 3600000;
+    let sum = countDownDate;
 
-//     else if (Animal.collection.time == 5) {
-//         var sum = a5once + countDownDate;
-        
-//         var curdate = new Date(null);
-//         curdate.setTime(sum);
-//         var support = curdate.toLocaleString();
-//     }
+    console.log(animal);
+    console.log(animal.time);
+    console.log(newSupport);
 
-//     else if (Animal.collection.time == 10) {
-//         var sum = a10veinticuatro + countDownDate;
-        
-//         var curdate = new Date(null);
-//         curdate.setTime(sum);
-//         var time = curdate.toLocaleString();   
-//     }
-//     return time;
-// }
+    console.log(newSupport.support);
+    switch (newSupport.support) {
+        case 5:
+            sum = (oneHour * 11) + countDownDate;
+            break;
+        case 10:
+            sum = (oneHour * 24) + countDownDate;
+            break;
+        default:
+            sum = (oneHour * 2) + countDownDate;
+            break;
+    }
+
+    console.log(sum);
+    let curdate = new Date(sum);
+    return curdate.toLocaleString();
+}
 
 
 

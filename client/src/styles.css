@@ -31,7 +31,7 @@ nav div#nav{
 
 section#banner{
     height: 100vh;
-    /* background: url("./img/cow-home.png") center center no-repeat fixed; */
+    background: url("./img/cow-home.png") center center no-repeat fixed;
     background-size: cover; 
     position: relative;
 }
@@ -93,7 +93,7 @@ section#banner div#cont div#support i{
 
 section#banner-2{
     height: 100vh;
-    /* background: url("./img/cow-home-2.png") center center no-repeat fixed; */
+    background: url("./img/cow-home-2.png") center center no-repeat fixed;
     background-size: cover; 
 }
 
