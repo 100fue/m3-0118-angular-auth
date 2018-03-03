@@ -6,7 +6,7 @@
         <span class="timer"> {{ l.timer }}</span>
         <img src="{{ l.photos }}" alt="{{ l.name }}">
         <h2> {{ l.name }} </h2>
-        <a [routerLink]="['/list', l._id]"> View Recipe </a>  
+        <a [routerLink]="['/', 'list', l._id]"> View Recipe </a>  
       </div>
     </article>
   </div>

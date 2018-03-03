@@ -3,6 +3,7 @@ import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { Observable } from 'rxjs/Rx';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 interface User {
   username: string,
@@ -16,14 +17,16 @@ export class SessionService {
   options: object = { withCredentials: true };
 
   constructor(private http: Http) {
-    // this.isLoggedIn().subscribe();
   }
 
-  private user: User;
+  // private user: User;
+  // is a type of subject, subject is a special type of observable so i can subscribe to messages like any other observables;
+  // you can emit new users and will always have a default value
+  public user = new BehaviorSubject(null);
 
-  getUser() {
-    return this.user;
-  }
+  // getUser() {
+  //   return this.user;
+  // }
 
   handleError(e) {
     console.log(e);
@@ -34,9 +37,10 @@ export class SessionService {
     return this.http.post(`${this.dbName}/api/auth/signup`, { username, password, email }, this.options)
       .map(res => res.json())
       .map((user) => {
-        console.log(`Setting user, welcome ${this.user.username}`)        
-        this.user = user;
-        return this.user;
+        // emit the new user to the behaviour subject
+        this.user.next(user);
+        console.log(`Setting user, welcome ${user.username}`)        
+        return user;
       })
       .catch(this.handleError);
   }
@@ -45,9 +49,10 @@ export class SessionService {
     return this.http.post(`${this.dbName}/api/auth/login`, { username, password }, this.options)
       .map(res => res.json())
       .map((user) => {
-        this.user = user;
-        console.log(`Setting user, welcome ${this.user.username}`);
-        return this.user;
+        // emit the new user to the behaviour subject
+        this.user.next(user);
+        console.log(`Setting user, welcome ${user.username}`);
+        return user;
       })
       .catch(this.handleError);
   }
@@ -56,14 +61,22 @@ export class SessionService {
     return this.http.get(`${this.dbName}/api/auth/logout`, this.options)
       .map(res => res.json())
       .map(() => {
-        console.log(`bye bye ${this.user.username}`);        
-        this.user = null;
-        return this.user;
+        console.log(`bye bye`);
+        // emit the new user to the behaviour subject
+        this.user.next(null);        
+        return null;
       })
       .catch(this.handleError);
   }
 
-  isLoggedIn(): boolean {
-    return !!this.user;
+  isLoggedIn(): Observable<boolean> {
+    return this.user.map((user) => {
+      if (user) {
+        return true;
+      }
+      else {
+        return false;
+      }
+    });
   }
 }

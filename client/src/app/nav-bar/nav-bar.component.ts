@@ -9,11 +9,21 @@ import { Router } from '@angular/router';
 })
 export class NavBarComponent implements OnInit {
 
+  user: any;
   isAuthenticated: boolean = false;
 
   constructor(public session: SessionService) { }
 
   ngOnInit() {
+    this.session.user
+      .subscribe((user) => {
+        this.user = user;
+      });
+
+    this.session.isLoggedIn()
+      .subscribe((isLoggedIn) => {
+        this.isAuthenticated = isLoggedIn;
+      });
   }
 
   logout() {
