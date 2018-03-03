@@ -17,8 +17,9 @@ export class SingleAnimalComponent implements OnInit {
   seconds
   
 
-  constructor(public AnimalSession: AnimalService, private router: Router,
-    private route: ActivatedRoute) { }
+  constructor(private AnimalSession: AnimalService, 
+              private router: Router,
+              private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {

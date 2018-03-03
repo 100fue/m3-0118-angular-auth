@@ -14,6 +14,8 @@ import { ListComponent } from './list/list.component';
 import { SingleAnimalComponent } from './single-animal/single-animal.component';
 import { SupportComponent } from './support/support.component';
 import { PanelControlComponent } from './panel-control/panel-control.component';
+import { LoginAuthGuard } from '../app/login.auth-guard';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 
 @NgModule({
@@ -25,7 +27,8 @@ import { PanelControlComponent } from './panel-control/panel-control.component';
     ListComponent,
     SingleAnimalComponent,
     SupportComponent,
-    PanelControlComponent
+    PanelControlComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,7 @@ import { PanelControlComponent } from './panel-control/panel-control.component';
     FormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [SessionService, AnimalService],
+  providers: [SessionService, AnimalService, LoginAuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

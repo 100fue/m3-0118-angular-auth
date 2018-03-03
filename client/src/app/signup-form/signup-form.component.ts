@@ -14,7 +14,8 @@ export class SignupFormComponent implements OnInit {
   email: string;
   error: string;
 
-  constructor(public session: SessionService, private router: Router) { }
+  constructor(private session: SessionService,
+              private router: Router) { }
 
   ngOnInit() {
   }

@@ -13,7 +13,7 @@ export class LoginFormComponent implements OnInit {
   password: string;
   error: string;
 
-  constructor(public session: SessionService, private router: Router) { }
+  constructor(private session: SessionService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -21,7 +21,7 @@ export class LoginFormComponent implements OnInit {
   login() {
     this.session.login(this.username, this.password)
       .catch(e => this.error = e)
-      .subscribe(user => {
+      .subscribe((user) => {
         console.log(`Welcome ${user.username}`)
         this.router.navigate(['/'])
       });

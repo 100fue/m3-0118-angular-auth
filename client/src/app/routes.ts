@@ -6,14 +6,16 @@ import { HomeComponent } from './home/home.component';
 import { SingleAnimalComponent } from './single-animal/single-animal.component';
 import { SupportComponent } from './support/support.component';
 import { PanelControlComponent } from './panel-control/panel-control.component';
+import { LoginAuthGuard } from './login.auth-guard';
+
 
 export const routes: Routes = [
-    { path: '', component: HomeComponent},
-    { path: 'login', component: LoginFormComponent},
-    { path: 'signup', component: SignupFormComponent},
-    { path: 'list', component: ListComponent},
-    { path: 'list/:id', component: SingleAnimalComponent},
-    { path: 'support/:id', component: SupportComponent},
-    { path: 'panel-control', component: PanelControlComponent},
-    { path: '**', redirectTo: ""}
+    { path: '', component: HomeComponent },
+    { path: 'login', component: LoginFormComponent },
+    { path: 'signup', component: SignupFormComponent, canActivate: [LoginAuthGuard] },
+    { path: 'list', component: ListComponent },
+    { path: 'list/:id', component: SingleAnimalComponent, canActivate: [LoginAuthGuard] },
+    { path: 'support/:id', component: SupportComponent },
+    { path: 'panel-control', component: PanelControlComponent },
+    { path: '**', redirectTo: "" }
 ];

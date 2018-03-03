@@ -11,7 +11,7 @@ export class ListComponent implements OnInit {
 
   list
 
-  constructor(public AnimalSession: AnimalService) {
+  constructor(private AnimalSession: AnimalService) {
   }
 
   ngOnInit() {

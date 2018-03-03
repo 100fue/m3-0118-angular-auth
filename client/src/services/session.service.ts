@@ -5,69 +5,65 @@ import 'rxjs/add/operator/catch';
 import { Observable } from 'rxjs/Rx';
 
 interface User {
-  username:string,
-  password:string
+  username: string,
+  password: string
 }
 
 @Injectable()
 export class SessionService {
 
-  dbName:string = "http://localhost:3000"
-  options:object = {withCredentials:true};
+  dbName: string = "http://localhost:3000"
+  options: object = { withCredentials: true };
 
   constructor(private http: Http) {
-    this.isLoggedIn().subscribe();
+    // this.isLoggedIn().subscribe();
   }
 
-  private user:User;
+  private user: User;
 
-  getUser(){
+  getUser() {
     return this.user;
-  }
-
-  private configureUser(set=false){
-    return (user) => {
-      if(set){
-        this.user = user;
-        console.log(`Setting user, welcome ${this.user.username}`)
-      }else{
-        console.log(`bye bye ${this.user.username}`)
-        this.user = null
-      }
-      return user;
-    }
   }
 
   handleError(e) {
     console.log(e);
-    return Observable.throw(e.json().message);
+    return Observable.throw(e.message);
   }
 
-  signup(username:string, password:string,email:string):Observable<any>{
-    return this.http.post(`${this.dbName}/api/auth/signup`, {username,password,email}, this.options)
+  signup(username: string, password: string, email: string): Observable<any> {
+    return this.http.post(`${this.dbName}/api/auth/signup`, { username, password, email }, this.options)
       .map(res => res.json())
-      .map(this.configureUser(true))
+      .map((user) => {
+        console.log(`Setting user, welcome ${this.user.username}`)        
+        this.user = user;
+        return this.user;
+      })
       .catch(this.handleError);
   }
 
-  login(username:string, password:string):Observable<any>{
-    return this.http.post(`${this.dbName}/api/auth/login`, {username,password},this.options)
+  login(username: string, password: string): Observable<any> {
+    return this.http.post(`${this.dbName}/api/auth/login`, { username, password }, this.options)
       .map(res => res.json())
-      .map(this.configureUser(true))
+      .map((user) => {
+        this.user = user;
+        console.log(`Setting user, welcome ${this.user.username}`);
+        return this.user;
+      })
       .catch(this.handleError);
   }
 
-  logout():Observable<any>{
-    return this.http.get(`${this.dbName}/api/auth/logout`,this.options)
+  logout(): Observable<any> {
+    return this.http.get(`${this.dbName}/api/auth/logout`, this.options)
       .map(res => res.json())
-      .map(this.configureUser(false))
+      .map(() => {
+        console.log(`bye bye ${this.user.username}`);        
+        this.user = null;
+        return this.user;
+      })
       .catch(this.handleError);
   }
 
-  isLoggedIn():Observable<any> {
-    return this.http.get(`${this.dbName}/api/auth/loggedin`,this.options)
-      .map(res => res.json())
-      .map(this.configureUser(true))
-      .catch(this.handleError);
+  isLoggedIn(): boolean {
+    return !!this.user;
   }
 }

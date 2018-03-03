@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { SessionService } from '../services/session.service';
 
 @Component({
   selector: 'app-root',
@@ -9,11 +8,6 @@ import { SessionService } from '../services/session.service';
 export class AppComponent {
 
   error: string
-  constructor(public session: SessionService) { }
+  constructor() { }
   
-  logout() {
-    this.session.logout()
-      .catch(e => this.error = e)
-      .subscribe();
-  }
 }

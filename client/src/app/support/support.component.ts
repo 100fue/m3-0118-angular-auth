@@ -13,8 +13,9 @@ export class SupportComponent implements OnInit {
   id
   error
 
-  constructor(public AnimalSession: AnimalService,  private router: Router,
-    private route: ActivatedRoute) { }
+  constructor(private AnimalSession: AnimalService,
+              private router: Router,
+              private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
