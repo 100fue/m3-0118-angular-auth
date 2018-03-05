@@ -14,11 +14,7 @@ export class SingleAnimalComponent implements OnInit {
   days
   hours
   minutes
-  seconds
-  // title: string = 'Google Maps';
-  
-
-  
+  seconds  
 
   constructor(private AnimalSession: AnimalService, 
               private router: Router,

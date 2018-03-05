@@ -19,9 +19,6 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 import { AgmCoreModule } from '@agm/core';
 
-// import { CommonModule } from '@angular/common';
-
-
 @NgModule({
   declarations: [
     AppComponent,
