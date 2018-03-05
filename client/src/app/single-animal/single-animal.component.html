@@ -19,10 +19,8 @@
         <h2>
           <span>{{animal?.name}}</span> needs your help and support.
         </h2>
-        <a href="">SAVE {{animal?.name}}</a>
+        <a *ngIf="animal?._id" [routerLink]="['/support', animal?._id]">SAVE {{animal?.name}}</a>
         <i class="ion-ios-heart"></i>
-
-        <!-- <a *ngIf="animal?._id" [routerLink]="['/support', animal?._id]"></a> -->
       </div>
     </div>
     <div class="col-md-12 cont-inf-map">
