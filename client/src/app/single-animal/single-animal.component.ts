@@ -57,8 +57,8 @@ export class SingleAnimalComponent implements OnInit {
       let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
       // Display the result in the element with id="demo"
-      this.timer = days + "d " + hours + "h "
-        + minutes + "m " + seconds + "s ";
+      this.timer = days + "<span> D</span> " + hours + "<span> H</span> "
+        + minutes + "<span> M</span> " + seconds + "<span> S</span> ";
 
       // console.log(this.timer)
 

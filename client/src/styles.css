@@ -128,51 +128,165 @@ section#list article{
 
 section#single-animal{
     padding-top: 140px;
+    padding-bottom: 80px;
 }
 
-section#single-animal div.img-an img{
-    border-radius: 10px;
-}
-
-section#single-animal div#info-an div.div-inf{
-    border-bottom: 1px solid #e6e6e6;
-    display: flex;
-    padding: 30px 20px;
-}
-
-section#single-animal div#info-an div.div-inf:first-child{
-    padding-top: 20px;
-}
-
-section#single-animal div#info-an div.div-inf:last-child{
-    border-bottom: none;
-}
-
-section#single-animal div#info-an div.div-inf div.cont-in-an{
-    margin-left: 40px;
-}
-
-section#single-animal div#info-an div.div-inf div.cont-in-an h2{
-    color: #b4b8bb;
-    font-size: 18px;
-    font-weight: 300;
-}
-
-section#single-animal div#info-an div.div-inf div.cont-in-an span{
-    color: #352e2c;
-    font-size: 20px;
-    font-weight: 300;
-}
-
-section#single-animal div#info-an div.div-inf i{
+section#single-animal h1{
     font-size: 30px;
-    margin-top: -5px;
-    color: #ff9800;
+    font-weight: 600;
+    color: #fb9803;
+    margin-bottom: 50px;
+    line-height: 30px;
+}
+
+section#single-animal h1 span{
+    color: #352e2d;
+    display: block;
+    text-transform: uppercase;
+}
+
+section#single-animal h1:after{
+    width: 44px;
+    content: "";
+    border-bottom: solid 5px #8dcc55;
+    display: block;
+    margin: 10px 0 0;
+}
+
+section#single-animal div.back{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+section#single-animal div.back a{
+    background: #8ecc55;
+    padding: 7px 15px 5px;
+    font-size: 12px;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 3px 0 0 3px;
+}
+
+section#single-animal div.back i{
+    padding: 4px 14px 2px;
+    color: #fff;
+    font-size: 16px;
+    background: #352e2d;
+    display: inline-block;
+    margin-left: -6px;
+    border-radius: 0 3px 3px 0;
+}
+
+section#single-animal div.img-an{
+   position: relative;
+   padding-right: 0;
+}
+
+section#single-animal div.div-timer{
+    margin-bottom: 16px;
+}
+
+section#single-animal div.div-timer i{
+    font-size: 30px;
+    background: #fb9803;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px 0 0 0;
+}
+
+section#single-animal div.div-timer span.timer{
+    z-index: 1;
+    color: #fff;
+    background: rgba(53, 46, 45, 1);
+    padding: 10px 20px;
+    font-size: 30px;
+    border-radius: 0 5px 0 0;
+}
+
+section#single-animal div.div-timer span.timer i{
+    margin-right: 20px;
+}
+
+section#single-animal div.div-timer span.timer span{
+    color: #fb9803;
+}
+
+section#single-animal div.img-an-lat{
+    background: #8dcc55;
+    color: #fff;
+    padding-left: 0;
+    position: relative;
+}
+
+section#single-animal div.img-an-lat div{
+    padding: 0 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+}
+
+section#single-animal div.img-an-lat div h2{
+    text-transform: capitalize;
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+section#single-animal div.img-an-lat div h2 span{
+    display: block;
+    font-size: 50px;
+    font-weight: 600;
+    color: #352e2c;
+}
+
+section#single-animal div.img-an-lat div h2 span:after{
+    width: 44px;
+    content: "";
+    border-bottom: solid 5px #fff;
+    display: block;
+    margin: 20px 0;
+}
+
+section#single-animal div.img-an-lat div a{
+    background: #352e2c;
+    padding: 7px 30px;
+    font-size: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 3px 0 0 3px;
+}
+
+section#single-animal div.img-an-lat div i{
+    padding: 3px 14px 3px;
+    background: #fff;
+    font-size: 22px;
+    color: #352e2d;
+    display: inline-block;
+    margin-left: -5px;
+    border-radius: 0 3px 3px 0;
+}
+
+section#single-animal div.cont-inf-map{
+    display: flex;
+    padding: 0;
+    margin-top: 30px;    
+}
+
+section#single-animal div.cont-inf-map div.cont-inf{
+    background: #efefef;
+    padding-left: 15px;
+    background-clip: content-box;   
+}
+
+section#single-animal div.cont-inf-map div.cont-map{
+    padding-right: 0;
 }
 
 agm-map {
     height: 300px;
-    width: 500px;
+    padding-right: 0!important;
 }
 
 /* SINGLE ANIMAL */

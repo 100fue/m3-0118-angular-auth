@@ -1,37 +1,59 @@
 <section id="single-animal" class="container">
   <div class="row">
-    <i class="ion-ios-arrow-thin-left"></i>
-    <h1 class="col-md-12">HELLO <span>{{animal?.name}}</span></h1>
-    <div class="img-an col-md-6">
-      <span class="timer">{{timer}}</span>
+    <h1 class="col-md-6">SAVE
+      <span>{{animal?.name}}</span>
+    </h1>
+    <div class="back col-md-6">
+      <a [routerLink]="['/list']">BACK</a>
+      <i class="ion-android-arrow-back"></i>
+    </div>
+    <div class="col-md-12 div-timer">
+      <i class='ion-ios-heart'></i>
+      <span class="timer col-md-3" [innerHTML]="timer"></span>
+    </div>
+    <div class="img-an col-md-8">
       <img src="{{animal?.photos[0]}}" alt="">
     </div>
-    <div id="info-an" class="col-md-6">
-      <div class="div-inf">
-        <i class="ion-pricetag"></i>
-        <div class="cont-in-an">
-          <h2>Name</h2>
-          <span>{{animal?.name}}</span>
-        </div>
-      </div>
-      <div class="div-inf">
+    <div class="img-an-lat col-md-4">
+      <div>
+        <h2>
+          <span>{{animal?.name}}</span> needs your help and support.
+        </h2>
+        <a href="">SAVE {{animal?.name}}</a>
         <i class="ion-ios-heart"></i>
-        <div class="cont-in-an">
-          <h2>Age</h2>
-          <span>{{animal?.age}}</span>
+
+        <!-- <a *ngIf="animal?._id" [routerLink]="['/support', animal?._id]"></a> -->
+      </div>
+    </div>
+    <div class="col-md-12 cont-inf-map">
+      <div class="col-md-4 cont-inf">
+        <div class="div-inf">
+          <i class="ion-pricetag"></i>
+          <div class="cont-in-an">
+            <h2>Name</h2>
+            <span>{{animal?.name}}</span>
+          </div>
+        </div>
+        <div class="div-inf">
+          <i class="ion-ios-heart"></i>
+          <div class="cont-in-an">
+            <h2>Age</h2>
+            <span>{{animal?.age}}</span>
+          </div>
+        </div>
+        <div class="div-inf">
+          <i class="ion-ios-basketball"></i>
+          <div class="cont-in-an">
+            <h2>Hobbies</h2>
+            <span>{{animal?.hobbies}}</span>
+          </div>
         </div>
       </div>
-      <div class="div-inf">
-        <i class="ion-ios-basketball"></i>
-        <div class="cont-in-an">
-          <h2>Hobbies</h2>
-          <span>{{animal?.hobbies}}</span>
-        </div>
+      <div class="col-md-8 cont-map">
+        <agm-map [latitude]="animal?.location.lat" [longitude]="animal?.location.lng">
+          <agm-marker [latitude]="animal?.location.lat" [longitude]="animal?.location.lng"></agm-marker>
+        </agm-map>
       </div>
-      <agm-map [latitude]="animal?.location.lat" [longitude]="animal?.location.lng">
-        <agm-marker [latitude]="animal?.location.lat" [longitude]="animal?.location.lng"></agm-marker>
-      </agm-map>
-      <a *ngIf="animal?._id" [routerLink]="['/support', animal?._id]">Go</a>
     </div>
   </div>
 </section>
