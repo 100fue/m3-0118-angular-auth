@@ -4,7 +4,7 @@ img{
 
 *{
     font-family: 'Montserrat', sans-serif;
-    text-decoration: none;
+    text-decoration: none!important;
 }
 /* NAV */
 
@@ -43,7 +43,7 @@ nav ul li.df{
 
 section#banner{
     height: 100vh;
-    /* background: url("./img/cow-home.png") center center no-repeat fixed; */
+    background: url("./img/cow-home.png") center center no-repeat fixed;
     background-size: cover; 
     position: relative;
 }
@@ -105,7 +105,7 @@ section#banner div#cont div#support i{
 
 section#banner-2{
     height: 100vh;
-    /* background: url("./img/cow-home-2.png") center center no-repeat fixed; */
+    background: url("./img/cow-home-2.png") center center no-repeat fixed;
     background-size: cover; 
 }
 
@@ -336,6 +336,53 @@ section#panel-control div#content-panel-control article p{
 
 section#support{
     padding-top: 140px;
+    padding-bottom: 80px;
+}
+
+section#support h1{
+    font-size: 30px;
+    font-weight: 600;
+    color: #fb9803;
+    margin-bottom: 50px;
+    line-height: 30px;
+}
+
+section#support h1 span{
+    color: #352e2d;
+    display: block;
+}
+
+section#support h1:after{
+    width: 44px;
+    content: "";
+    border-bottom: solid 5px #8dcc55;
+    display: block;
+    margin: 10px 0 0;
+}
+
+section#support div.back{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+section#support div.back a{
+    background: #8ecc55;
+    padding: 7px 15px 5px;
+    font-size: 12px;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 3px 0 0 3px;
+}
+
+section#support div.back i{
+    padding: 4px 14px 2px;
+    color: #fff;
+    font-size: 16px;
+    background: #352e2d;
+    display: inline-block;
+    margin-left: -6px;
+    border-radius: 0 3px 3px 0;
 }
 
 section#support article{
@@ -346,6 +393,7 @@ section#support article div.art-div{
     background: #352e2c;
     color: #fff;
     padding: 40px;
+    border-radius: 5px;
 }
 
 section#support article#ten div.art-div{
@@ -404,29 +452,31 @@ section#support article span.span-ze{
 
 section#support article a.ten{
     background: #352e2c;
-    padding: 7px 30px;
+    padding: 8px 30px;
     font-size: 16px;
     color: #fff;
     text-transform: uppercase;
     border-radius: 3px 0 0 3px;
     margin-top: 30px;
     border: none;
+    cursor: pointer;
 }
 
 section#support article a{
-    color: #352e2c;
-    background: #fff;
+    color: #fff;
+    background: #8dcc55;
     padding: 7px 30px;
     font-size: 16px;
     text-transform: uppercase;
     border-radius: 3px 0 0 3px;
     margin-top: 30px;
-    border: 1px solid #fff;
+    border: 1px solid #8ccc55;
+    cursor: pointer;
 }
 
 
 section#support article i.ten{
-    padding: 3px 14px 3px;
+    padding: 4px 14px 4px;
     background: #fff;
     font-size: 18px;
     color: #352e2d;
@@ -441,8 +491,7 @@ section#support article i{
     padding: 3px 14px 3px;
     background: #fff;
     font-size: 18px;
-    background: #352e2d;
-    color: #fff;
+    color: #352e2d;
     display: inline-block;
     margin-left: -5px;
     border-radius: 0 3px 3px 0;

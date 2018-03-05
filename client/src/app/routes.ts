@@ -14,7 +14,7 @@ export const routes: Routes = [
     { path: 'login', component: LoginFormComponent },
     { path: 'signup', component: SignupFormComponent, canActivate: [LoginAuthGuard] },
     { path: 'list', component: ListComponent },
-    { path: 'list/:id', component: SingleAnimalComponent, canActivate: [LoginAuthGuard] },
+    { path: 'list/:id', component: SingleAnimalComponent },
     { path: 'support/:id', component: SupportComponent },
     { path: 'panel-control', component: PanelControlComponent },
     { path: '**', redirectTo: "" }
