@@ -97,7 +97,7 @@ section#banner div#cont div#support i{
     padding: 3px 14px 3px;
     background: #fff;
     font-size: 25px;
-    color: #352e2d;
+    color: #352e2c;
     display: inline-block;
     margin-left: -5px;
     border-radius: 0 3px 3px 0;
@@ -107,6 +107,48 @@ section#banner-2{
     height: 100vh;
     background: url("./img/cow-home-2.png") center center no-repeat fixed;
     background-size: cover; 
+    position: relative;
+    color: #fff;
+}
+
+
+section#banner-2  div.title-sec2{
+    position: absolute;
+    left: 100px;
+    top: 50%;
+    transform: translateY(-50%) rotate(270deg);
+}
+
+section#banner-2 div.title-sec2 h2{
+    display: inline-block;
+    font-weight: 300;
+}
+
+section#banner-2 div.title-sec2 span{
+    font-size: 20px;
+    border: 10px solid #fff;
+    border-radius: 50%;
+    padding: 20px;
+    margin-left: 40px;
+    color: #fff;
+}
+
+section#banner-2 div.cont-sec2{
+    position: absolute;
+    top: 50%;
+    left: 300px;
+    transform: translateY(-50%);
+}
+
+section#banner-2 div.cont-sec2 h2{
+    font-weight: 600;
+    margin-bottom: 30px;
+    font-size: 32px;
+    color: #352e2c;
+}
+
+section#banner-2 div.cont-sec2 p{
+    font-weight: 300;
 }
 
 /* HOME */
@@ -140,7 +182,7 @@ section#single-animal h1{
 }
 
 section#single-animal h1 span{
-    color: #352e2d;
+    color: #352e2c;
     display: block;
     text-transform: uppercase;
 }
@@ -172,7 +214,7 @@ section#single-animal div.back i{
     padding: 4px 14px 2px;
     color: #fff;
     font-size: 16px;
-    background: #352e2d;
+    background: #352e2c;
     display: inline-block;
     margin-left: -6px;
     border-radius: 0 3px 3px 0;
@@ -180,7 +222,6 @@ section#single-animal div.back i{
 
 section#single-animal div.img-an{
    position: relative;
-   padding-right: 0;
 }
 
 section#single-animal div.div-timer{
@@ -216,7 +257,6 @@ section#single-animal div.div-timer span.timer span{
 section#single-animal div.img-an-lat{
     background: #f4c04d;
     color: #fff;
-    padding-left: 0;
     position: relative;
 }
 
@@ -263,7 +303,7 @@ section#single-animal div.img-an-lat div i{
     padding: 3px 14px 3px;
     background: #fff;
     font-size: 22px;
-    color: #352e2d;
+    color: #352e2c;
     display: inline-block;
     margin-left: -5px;
     border-radius: 0 3px 3px 0;
@@ -279,10 +319,6 @@ section#single-animal div.cont-inf-map div.cont-inf{
     background: #efefef;
     padding-left: 15px;
     background-clip: content-box;   
-}
-
-section#single-animal div.cont-inf-map div.cont-map{
-    padding-right: 0;
 }
 
 section#single-animal div.cont-inf div.div-inf{
@@ -309,7 +345,7 @@ section#single-animal div.cont-inf div.div-inf h2{
 }
 
 section#single-animal div.cont-inf div.div-inf {
-    color: #352e2d;
+    color: #352e2c;
     font-weight: 300;
     font-size: 22px;
 }
@@ -319,6 +355,16 @@ agm-map {
     height: 100%;
     padding-right: 0!important;
 }
+
+section#single-animal div.div-videos{
+    display: flex;
+    padding: 0;
+    margin-top: 30px;
+}
+
+/* section#single-animal div.div-videos div.modal-video:nth-child(2n+3){
+    padding-right: 0!important; 
+} */
 
 /* SINGLE ANIMAL */
 
@@ -431,7 +477,7 @@ section#panel-control div#back i{
     padding: 3px 14px 3px;
     background: #fff;
     font-size: 16px;
-    color: #352e2d;
+    color: #352e2c;
     display: inline-block;
     margin-left: -6px;
     border-radius: 0 3px 3px 0;
@@ -445,7 +491,7 @@ section#panel-control div#content-panel-control{
 section#panel-control div#content-panel-control h2{
     text-align: center;
     font-size: 16px;
-    color: #352e2d;
+    color: #352e2c;
     margin-bottom: 50px;
     font-weight: 300;
 }
@@ -493,7 +539,7 @@ section#support h1{
 }
 
 section#support h1 span{
-    color: #352e2d;
+    color: #352e2c;
     display: block;
 }
 
@@ -524,7 +570,7 @@ section#support div.back i{
     padding: 4px 14px 2px;
     color: #fff;
     font-size: 16px;
-    background: #352e2d;
+    background: #352e2c;
     display: inline-block;
     margin-left: -6px;
     border-radius: 0 3px 3px 0;
@@ -624,7 +670,7 @@ section#support article i.ten{
     padding: 4px 14px 4px;
     background: #fff;
     font-size: 18px;
-    color: #352e2d;
+    color: #352e2c;
     display: inline-block;
     margin-left: -5px;
     border-radius: 0 3px 3px 0;
@@ -636,7 +682,7 @@ section#support article i{
     padding: 3px 14px 3px;
     background: #fff;
     font-size: 18px;
-    color: #352e2d;
+    color: #352e2c;
     display: inline-block;
     margin-left: -5px;
     border-radius: 0 3px 3px 0;

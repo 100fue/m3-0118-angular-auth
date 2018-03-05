@@ -1,57 +1,113 @@
 <section id="single-animal" class="container">
-  <div class="row">
-    <h1 class="col-md-6">SAVE
-      <span>{{animal?.name}}</span>
-    </h1>
-    <div class="back col-md-6">
-      <a [routerLink]="['/list']">BACK</a>
-      <i class="ion-android-arrow-back"></i>
-    </div>
-    <div class="col-md-12 div-timer">
-      <i class='ion-ios-heart'></i>
-      <span class="timer col-md-3" [innerHTML]="timer"></span>
-    </div>
-    <div class="img-an col-md-8">
-      <img src="{{animal?.photos[0]}}" alt="">
-    </div>
-    <div class="img-an-lat col-md-4">
-      <div>
-        <h2>
-          <span>{{animal?.name}}</span> needs your help and support.
-        </h2>
-        <a *ngIf="animal?._id" [routerLink]="['/support', animal?._id]">SAVE {{animal?.name}}</a>
-        <i class="ion-ios-heart"></i>
-      </div>
-    </div>
-    <div class="col-md-12 cont-inf-map">
-      <div class="col-md-4 cont-inf">
-        <div class="div-inf">
-          <i class="ion-pricetag"></i>
-          <div class="cont-in-an">
-            <h2>Name</h2>
-            <span>{{animal?.name}}</span>
-          </div>
-        </div>
-        <div class="div-inf">
-          <i class="ion-ios-heart"></i>
-          <div class="cont-in-an">
-            <h2>Age</h2>
-            <span>{{animal?.age}}</span>
-          </div>
-        </div>
-        <div class="div-inf">
-          <i class="ion-ios-basketball"></i>
-          <div class="cont-in-an">
-            <h2>Hobbies</h2>
-            <span>{{animal?.hobbies}}</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-8 cont-map">
-        <agm-map [latitude]="animal?.location.lat" [longitude]="animal?.location.lng">
-          <agm-marker [latitude]="animal?.location.lat" [longitude]="animal?.location.lng"></agm-marker>
-        </agm-map>
-      </div>
-    </div>
-  </div>
+	<div class="row">
+		<h1 class="col-md-6">SAVE
+			<span>{{animal?.name}}</span>
+		</h1>
+		<div class="back col-md-6">
+			<a [routerLink]="['/list']">BACK</a>
+			<i class="ion-android-arrow-back"></i>
+		</div>
+		<div class="col-md-12 div-timer">
+			<i class='ion-ios-heart'></i>
+			<span class="timer col-md-3" [innerHTML]="timer"></span>
+		</div>
+		<div class="img-an col-md-8">
+			<img src="{{animal?.photos[0]}}" alt="">
+		</div>
+		<div class="img-an-lat col-md-4">
+			<div>
+				<h2>
+					<span>{{animal?.name}}</span> needs your help and support.
+				</h2>
+				<a *ngIf="animal?._id" [routerLink]="['/support', animal?._id]">SAVE {{animal?.name}}</a>
+				<i class="ion-ios-heart"></i>
+			</div>
+		</div>
+		<div class="col-md-12 cont-inf-map">
+			<div class="col-md-4 cont-inf">
+				<div class="div-inf">
+					<i class="ion-pricetag"></i>
+					<div class="cont-in-an">
+						<h2>Name</h2>
+						<span>{{animal?.name}}</span>
+					</div>
+				</div>
+				<div class="div-inf">
+					<i class="ion-ios-heart"></i>
+					<div class="cont-in-an">
+						<h2>Age</h2>
+						<span>{{animal?.age}}</span>
+					</div>
+				</div>
+				<div class="div-inf">
+					<i class="ion-ios-basketball"></i>
+					<div class="cont-in-an">
+						<h2>Hobbies</h2>
+						<span>{{animal?.hobbies}}</span>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-8 cont-map">
+				<agm-map [latitude]="animal?.location.lat" [longitude]="animal?.location.lng">
+					<agm-marker [latitude]="animal?.location.lat" [longitude]="animal?.location.lng"></agm-marker>
+				</agm-map>
+			</div>
+		</div>
+		<div class="col-md-12 div-videos">
+			<div class="modal-video col-md-4" data-toggle="modal" data-target="#videoOne">
+				<img src="http://via.placeholder.com/400x300" alt="">
+			</div>
+			<div class="modal fade" id="videoOne" tabindex="-1" role="dialog" aria-labelledby="videoOneLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="videoOneLabel">Modal title</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							one
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-video col-md-4" data-toggle="modal" data-target="#videoTwo">
+				<img src="http://via.placeholder.com/400x300" alt="">
+			</div>
+			<div class="modal fade" id="videoTwo" tabindex="-1" role="dialog" aria-labelledby="videoTwoLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="videoTwoLabel">Modal title</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							two
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-video col-md-4" data-toggle="modal" data-target="#videoThree">
+				<img src="http://via.placeholder.com/400x300" alt="">
+			</div>
+			<div class="modal fade" id="videoThree" tabindex="-1" role="dialog" aria-labelledby="videoThreeLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="videoThreeLabel">Modal title</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							three
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </section>
