@@ -28,7 +28,13 @@
           <span>{{animal?.hobbies}}</span>
         </div>
       </div>
+      <agm-map [latitude]="animal?.location.lat" [longitude]="animal?.location.lng">
+        <agm-marker [latitude]="animal?.location.lat" [longitude]="animal?.location.lng"></agm-marker>
+      </agm-map>
       <a *ngIf="animal?._id" [routerLink]="['/support', animal?._id]">Go</a>
     </div>
   </div>
 </section>
+
+{{animal?.location.lat}}
+{{animal?.location.lng}}

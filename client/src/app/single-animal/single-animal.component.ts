@@ -15,6 +15,9 @@ export class SingleAnimalComponent implements OnInit {
   hours
   minutes
   seconds
+  // title: string = 'Google Maps';
+  
+
   
 
   constructor(private AnimalSession: AnimalService, 
@@ -31,6 +34,7 @@ export class SingleAnimalComponent implements OnInit {
     this.AnimalSession.getAnimal(id)
       .map(a => {
         this.animal = a
+        console.log(this.animal)
         this.timer = this.animal.time
         this.counterdown()
       })

@@ -17,6 +17,10 @@ import { PanelControlComponent } from './panel-control/panel-control.component';
 import { LoginAuthGuard } from '../app/login.auth-guard';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 
+import { AgmCoreModule } from '@agm/core';
+
+// import { CommonModule } from '@angular/common';
+
 
 @NgModule({
   declarations: [
@@ -28,13 +32,18 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     SingleAnimalComponent,
     SupportComponent,
     PanelControlComponent,
-    NavBarComponent
+    NavBarComponent,
+    
+    // CommonModule
   ],
   imports: [
     BrowserModule,
     HttpModule,
     FormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBkLthX20CS9FmktqyxJvUqUYTIbSdHhlI'
+    })
   ],
   providers: [SessionService, AnimalService, LoginAuthGuard],
   bootstrap: [AppComponent]

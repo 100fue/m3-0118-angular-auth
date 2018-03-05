@@ -43,7 +43,7 @@ nav ul li.df{
 
 section#banner{
     height: 100vh;
-    background: url("./img/cow-home.png") center center no-repeat fixed;
+    /* background: url("./img/cow-home.png") center center no-repeat fixed; */
     background-size: cover; 
     position: relative;
 }
@@ -105,7 +105,7 @@ section#banner div#cont div#support i{
 
 section#banner-2{
     height: 100vh;
-    background: url("./img/cow-home-2.png") center center no-repeat fixed;
+    /* background: url("./img/cow-home-2.png") center center no-repeat fixed; */
     background-size: cover; 
 }
 
@@ -168,6 +168,11 @@ section#single-animal div#info-an div.div-inf i{
     font-size: 30px;
     margin-top: -5px;
     color: #ff9800;
+}
+
+agm-map {
+    height: 300px;
+    width: 500px;
 }
 
 /* SINGLE ANIMAL */
