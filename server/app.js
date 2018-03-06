@@ -11,6 +11,7 @@ const {dbURL} = require('./config');
 const cors = require('cors');
 const auth = require('./routes/auth');
 const animal = require('./routes/animal');
+const support = require('./routes/panel');
 
 const app = express();
 
@@ -53,8 +54,8 @@ app.use(session({
 
 require('./passport')(app)
 app.use('/api/animal', animal);
-
 app.use('/api/auth', auth);
+app.use('/api/support', support);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

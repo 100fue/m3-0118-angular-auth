@@ -6,7 +6,7 @@ import { HttpModule } from '@angular/http';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { SessionService } from '../services/session.service';
 import { AnimalService } from '../services/animal.service';
-// import { PanelService } from '../services/panel.service';
+import { PanelService } from '../services/panel.service';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { RouterModule } from '@angular/router';
 import { routes } from "./routes";
@@ -43,7 +43,7 @@ import { AgmCoreModule } from '@agm/core';
       apiKey: 'AIzaSyBkLthX20CS9FmktqyxJvUqUYTIbSdHhlI'
     })
   ],
-  providers: [SessionService, AnimalService, LoginAuthGuard],
+  providers: [SessionService, AnimalService, LoginAuthGuard,PanelService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

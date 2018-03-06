@@ -1,3 +1,5 @@
+<app-nav-bar></app-nav-bar>
+<app-nav-bar></app-nav-bar>
 <section id="list" class="container-fluid">
 	<div class="container">
 		<div class="row">
@@ -9,7 +11,7 @@
 					<h2> {{ l.name }} </h2>
 					<span [innerHTML]="l.timer"></span>
 					<div class="div-a">
-						<a [routerLink]="['/', 'list', l._id]"> SAVE THIS COW </a>
+						<a [routerLink]="['/', 'list', l._id]"> RECIPE </a>
 						<i class="ion-heart"></i>
 					</div>
 				</div>

@@ -443,7 +443,6 @@ section#single-animal div.div-videos{
 }
 
 section#panel-control{
-    padding-top: 56px;
     position: relative;
 }
 
@@ -464,6 +463,8 @@ section#panel-control aside div#user-panel img{
     display: inline-block;
     margin-bottom: 10px;
     border-radius: 50%;
+    height: 80px;
+    width: 80px;
 }
 
 section#panel-control aside div#user-panel p{
