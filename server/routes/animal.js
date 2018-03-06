@@ -10,6 +10,7 @@ router.get('/list', (req, res, next) => {
         })
         .catch(err => res.json(err).status(500));
 });
+
 //SUPPORT
 
 router.post('/list/:id/support', (req, res, next) => {

@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { SessionService } from '../services/session.service';
 import { AnimalService } from '../services/animal.service';
+// import { PanelService } from '../services/panel.service';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { RouterModule } from '@angular/router';
 import { routes } from "./routes";

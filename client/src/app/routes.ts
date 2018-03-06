@@ -16,6 +16,6 @@ export const routes: Routes = [
     { path: 'list', component: ListComponent },
     { path: 'list/:id', component: SingleAnimalComponent },
     { path: 'support/:id', component: SupportComponent },
-    { path: 'panel-control', component: PanelControlComponent },
+    { path: 'panel', component: PanelControlComponent },
     { path: '**', redirectTo: "" }
 ];

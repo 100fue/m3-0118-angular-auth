@@ -1,13 +1,19 @@
-<section id="list" class="container">
-  <div class="row">
-    <article class="col-md-3" *ngFor="let l of list">
-      <div>
-        <span [innerHTML]="l.timer"></span>
-        <img src="{{ l.photos }}" alt="{{ l.name }}">
-        <h2> {{ l.name }} </h2>
-        <a [routerLink]="['/', 'list', l._id]"> View Recipe </a>  
-      </div>
-    </article>
-  </div>
+<section id="list" class="container-fluid">
+	<div class="container">
+		<div class="row">
+			<article class="col-md-4" *ngFor="let l of list">
+				<div class="div-art">
+					<div class="div-img">
+						<img src="{{ l.photos }}" alt="{{ l.name }}">
+					</div>
+					<h2> {{ l.name }} </h2>
+					<span [innerHTML]="l.timer"></span>
+					<div class="div-a">
+						<a [routerLink]="['/', 'list', l._id]"> SAVE THIS COW </a>
+						<i class="ion-heart"></i>
+					</div>
+				</div>
+			</article>
+		</div>
+	</div>
 </section>
-

@@ -9,9 +9,15 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class PanelControlComponent implements OnInit {
 
-  constructor() { }
+  user: any;
 
-  ngOnInit() {
-  }
+  constructor(public session: SessionService) { }
 
+    ngOnInit() {  
+      this.session.user
+      .subscribe((user) => {
+        this.user = user;
+      });
+    }
+    
 }

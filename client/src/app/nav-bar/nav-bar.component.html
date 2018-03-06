@@ -21,7 +21,7 @@
                 <a class="nav-link" *ngIf="!isAuthenticated" [routerLink]="['/signup']">Signup</a>
             </li>
             <li class="nav-item df" *ngIf="isAuthenticated">
-                <a class="nav-link" [routerLink]="['/panel-control']">{{user?.username}}</a>
+                <a class="nav-link" [routerLink]="['/panel']">{{user?.username}}</a>
                 <img [src]="user?.photo" alt="">
             </li>
             <li class="nav-item" *ngIf="isAuthenticated">

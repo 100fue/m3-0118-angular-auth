@@ -114,7 +114,7 @@ section#banner-2{
 
 section#banner-2  div.title-sec2{
     position: absolute;
-    left: 100px;
+    left: 0;
     top: 50%;
     transform: translateY(-50%) rotate(270deg);
 }
@@ -136,7 +136,7 @@ section#banner-2 div.title-sec2 span{
 section#banner-2 div.cont-sec2{
     position: absolute;
     top: 50%;
-    left: 300px;
+    left: 200px;
     transform: translateY(-50%);
 }
 
@@ -149,6 +149,7 @@ section#banner-2 div.cont-sec2 h2{
 
 section#banner-2 div.cont-sec2 p{
     font-weight: 300;
+    margin-bottom: 0;
 }
 
 /* HOME */
@@ -157,11 +158,63 @@ section#banner-2 div.cont-sec2 p{
 
 section#list{
     padding-top: 140px;
+    padding-bottom: 80px;
+    background: #f0f0f2;
 }
 
 section#list article{
     margin-bottom: 40px;
+    text-align: center;
 }
+
+section#list article div.div-art{
+    background: #fff;
+}
+
+section#list article div.div-art h2{
+    margin-top: 30px;
+    font-size: 25px;
+    font-weight: 600;
+    color: #352e2c;
+    text-transform: capitalize;
+}
+
+
+section#list article div.div-art span{
+    margin-bottom: 10px;
+    display: inline-block;
+    color: #352e2c;
+    font-weight: 600;
+}
+
+section#list article div.div-art span span{
+    color: #8bcc55;
+    font-weight: 400;
+}
+section#list article div.div-art div.div-a{
+    padding: 30px 0;
+    border-top: 1px solid #ececec;
+}
+
+section#list article div.div-art div.div-a a{
+    background: #352e2c;
+    padding: 7px 30px;
+    font-size: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 3px 0 0 3px;
+}
+
+section#list article div.div-art div.div-a i{
+    padding: 2px 14px 3px;
+    background: #f4c04d;
+    font-size: 22px;
+    color: #ffffff;
+    display: inline-block;
+    margin-left: -5px;
+    border-radius: 0 3px 3px 0;
+}
+
 
 /* LIST */
 
@@ -222,6 +275,7 @@ section#single-animal div.back i{
 
 section#single-animal div.img-an{
    position: relative;
+   padding-right: 0;
 }
 
 section#single-animal div.div-timer{
@@ -258,6 +312,7 @@ section#single-animal div.img-an-lat{
     background: #f4c04d;
     color: #fff;
     position: relative;
+    background-clip: content-box;
 }
 
 section#single-animal div.img-an-lat div{
@@ -325,6 +380,9 @@ section#single-animal div.cont-inf div.div-inf{
     display: flex;
     padding: 40px;
     border-bottom: 1px solid #ddd;
+    color: #352e2c;
+    font-weight: 300;
+    font-size: 22px;
 }
 
 section#single-animal div.cont-inf div.div-inf:last-child{
@@ -343,13 +401,6 @@ section#single-animal div.cont-inf div.div-inf h2{
     font-weight: 400;
     margin-top: 10px;
 }
-
-section#single-animal div.cont-inf div.div-inf {
-    color: #352e2c;
-    font-weight: 300;
-    font-size: 22px;
-}
-
 
 agm-map {
     height: 100%;

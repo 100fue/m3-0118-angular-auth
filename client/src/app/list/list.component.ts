@@ -45,8 +45,8 @@ export class ListComponent implements OnInit {
       let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
       // Display the result in the element with id="demo"
-      timer = days + "<span>D</span> " + hours + "<span>H</span> "
-        + minutes + "<span>M</span> " + seconds + "<span>S</span> ";
+      timer = days + " <span>D</span> " + hours + " <span>H</span> "
+        + minutes + " <span>M</span> " + seconds + " <span>S</span> ";
 
       element.timer = timer
     }, 100);
