@@ -538,6 +538,49 @@ section#panel-control div#back i{
 section#panel-control div#content-panel-control{
     background: #f0f0f2;
     padding: 60px 100px 100px;
+    position: relative;
+}
+
+section#panel-control div#content-panel-control div#div-form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+section#panel-control div#content-panel-control div#div-form img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+section#panel-control div#content-panel-control div#div-form form{
+    margin-top: 30px;
+}
+
+section#panel-control div#content-panel-control div#div-form form div#div-button{
+    margin-top: 30px;
+}
+
+section#panel-control div#content-panel-control div#div-form form div#div-button a{
+    background: #352e2c;
+    padding: 7px 30px;
+    font-size: 18px;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 3px 0 0 3px;
+    -webkit-appearance: unset!important;
+}
+
+section#panel-control div#content-panel-control div#div-form form div#div-button i{
+    padding: 2px 14px 3px;
+    background: #f4c04d;
+    font-size: 22px;
+    color: #fff;
+    display: inline-block;
+    margin-left: -5px;
+    border-radius: 0 3px 3px 0;
 }
 
 section#panel-control div#content-panel-control h2{
@@ -746,5 +789,37 @@ section#support article i{
     border: 1px solid #fff;
 }
 
-
 /* SUPPORT */
+
+/* SIGNUP */
+
+section#signup{
+    height: 100vh;
+    overflow: hidden;
+    padding: 100px 0 80px;
+}
+
+section#signup div.div-form{
+    padding-left: 50px;
+    padding-right: 50px; 
+
+}
+
+ section#signup div.div-form form{
+    display: flex;
+    flex-direction: column;
+}
+/*
+section#signup div.div-form div.div-2-form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+} */
+
+section#signup div.div-form button{
+    margin-top: 30px;
+    display: inline-block;
+}
+
+/* SIGNUP */

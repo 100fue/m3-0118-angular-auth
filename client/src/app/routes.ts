@@ -12,10 +12,10 @@ import { LoginAuthGuard } from './login.auth-guard';
 export const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'login', component: LoginFormComponent },
-    { path: 'signup', component: SignupFormComponent, canActivate: [LoginAuthGuard] },
+    { path: 'signup', component: SignupFormComponent, },
     { path: 'list', component: ListComponent },
     { path: 'list/:id', component: SingleAnimalComponent },
     { path: 'support/:id', component: SupportComponent },
-    { path: 'panel', component: PanelControlComponent },
+    { path: 'panel', component: PanelControlComponent, canActivate: [LoginAuthGuard] },
     { path: '**', redirectTo: "" }
 ];

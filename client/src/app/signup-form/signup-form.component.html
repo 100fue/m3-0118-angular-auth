@@ -1,14 +1,28 @@
 <app-nav-bar></app-nav-bar>
-<h1> Signup </h1>
-<form>
-  <label> Username </label>
-  <input type="text" [(ngModel)]="username" name="username" required/>
-  <label> email </label>
-  <input type="email" [(ngModel)]="email" name="email" required/>
-  <label> Password </label>
-  <input type="password" [(ngModel)]="password" name="password" required/>
-  <div>
-    <button (click)="signup()"> signup </button>
-  </div>
-</form>
-<p *ngIf="error" class="error"> {{ error }} </p>
+<section id="signup" class="container-fluid">
+	<div class="row">
+		<div class="div-signup col-md-6">
+			<img src="http://via.placeholder.com/800x1000" alt="">
+		</div>
+		<div class="div-form col-md-6">
+			<div class="div-form">
+				<h1> Sign up </h1>
+				<form>
+					<label> Username </label>
+					<input type="text" [(ngModel)]="username" name="username" required/>
+					<label> email </label>
+					<input type="email" [(ngModel)]="email" name="email" required/>
+					<label> Password </label>
+					<input type="password" [(ngModel)]="password" name="password" required/>
+					<div>
+						<button (click)="signup()"> signup </button>
+					</div>
+				</form>
+				<span>you have an user acount alredy?
+					<a [routerLink]="['/login']">Login</a>
+				</span>
+				<p *ngIf="error" class="error"> {{ error }} </p>
+			</div>
+		</div>
+	</div>
+</section>
