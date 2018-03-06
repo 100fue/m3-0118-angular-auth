@@ -553,6 +553,10 @@ section#panel-control div#content-panel-control h2 i{
     color: #f4c04d;
 }
 
+section#panel-control div#content-panel-control div.div-art{
+    display: flex;
+}
+
 section#panel-control div#content-panel-control article{
     text-align: center;
     padding: 40px 20px;
