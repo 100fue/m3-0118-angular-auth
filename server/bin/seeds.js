@@ -11,61 +11,73 @@ mongoose.Promise = Promise;
 
 const animalArray = [
   {
-    time: "90000000",
-    name: "catalina",
+    time: "2018-9-11 08:37:25",
+    name: "Florinda",
     age: 12,
     hobbies: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     location: {
-        lat: 3344,
-        lng: 4555
+        lat: 40.4893538,
+        lng: -3.6827461
     },
     photos: "https://respuestas.tips/wp-content/uploads/2013/10/rana.1-1024x683.jpg",
     videos: "aqui va el video"
   },
   {
-    time: "90000000",
-    name: "catalina",
-    age: 12,
+    time: "2018-10-7 17:37:25",
+    name: "Catalina",
+    age: 9,
     hobbies: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     location: {
-        lat: 3344,
-        lng: 4555
+        lat: 51.678418,
+        lng: 7.809007
     },
     photos: "https://respuestas.tips/wp-content/uploads/2013/10/rana.1-1024x683.jpg",
     videos: "aqui va el video"
   },
   {
-    time: "90000000",
-    name: "catalina",
-    age: 12,
+    time: "2018-7-6 15:37:25",
+    name: "Esperanza",
+    age: 4,
     hobbies: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     location: {
-        lat: 3344,
-        lng: 4555
+        lat: 40.4893538,
+        lng: -3.6827461
     },
     photos: "https://respuestas.tips/wp-content/uploads/2013/10/rana.1-1024x683.jpg",
     videos: "aqui va el video"
   },
   {
-    time: "90000000",
-    name: "catalina",
-    age: 12,
+    time: "Sep 18, 2018 15:37:25",
+    name: "Clotilde",
+    age: 7,
     hobbies: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     location: {
-        lat: 3344,
-        lng: 4555
+        lat: 51.678418,
+        lng: 7.809007
     },
     photos: "https://respuestas.tips/wp-content/uploads/2013/10/rana.1-1024x683.jpg",
     videos: "aqui va el video"
   },
   {
-    time: "90000000",
-    name: "catalina",
-    age: 12,
+    time: "2018-6-22 15:37:25",
+    name: "Lucrecia",
+    age: 10,
     hobbies: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     location: {
-        lat: 3344,
-        lng: 4555
+        lat: 40.4893538,
+        lng: -3.6827461
+    },
+    photos: "https://respuestas.tips/wp-content/uploads/2013/10/rana.1-1024x683.jpg",
+    videos: "aqui va el video"
+  },
+  {
+    time: "2018-6-22 15:37:25",
+    name: "Antonia",
+    age: 14,
+    hobbies: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    location: {
+        lat: 51.678418,
+        lng: 7.809007
     },
     photos: "https://respuestas.tips/wp-content/uploads/2013/10/rana.1-1024x683.jpg",
     videos: "aqui va el video"
