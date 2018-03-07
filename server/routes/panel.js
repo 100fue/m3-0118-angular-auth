@@ -19,20 +19,39 @@ router.get('/panel/:id', (req, res, next) => {
         .catch(err => res.json(err).status(500));
 });
 
-router.post('/panel/:id', (req, res, next) => {
-    const { username, password } = req.body;
+router.post('/panel/:id/username', (req, res, next) => {
+    const { username } = req.body;
     const userId = req.params.id;
 
-    const salt = bcrypt.genSaltSync(10);
-    const hashPass = bcrypt.hashSync(password, salt);
     const theUser = new User({
-        username,
-        password: hashPass
+        username
     });
 
     User.findByIdAndUpdate({ userId: userId }, { theUser }, { new: true })
         .then(updatedUser => {
-            debug(`Changes user ${user._id}. Change ${user.username}`);
+            debug(`Changes user ${updatedUser._id}. Change ${updatedUser.username}`);
+            req.user = updatedUser
+            res.status(200).json(req.user)
+        })
+        .catch(e => {
+            console.log(e);
+            res.status(500).json(e)
+        })
+});
+
+router.post('/panel/:id/password', (req, res, next) => {
+    const { password } = req.body;
+    const userId = req.params.id;
+
+    const salt = bcrypt.genSaltSync(10);
+    const hashPass = bcrypt.hashSync(password, salt);
+    const theUserPassword = new User({
+        password: hashPass
+    });
+
+    User.findByIdAndUpdate({ userId: userId }, { theUserPassword }, { new: true })
+        .then(updatedUser => {
+            debug(`Changes user ${updatedUser._id}. Change ${updatedUser.password}`);
             req.user = updatedUser
             res.status(200).json(req.user)
         })

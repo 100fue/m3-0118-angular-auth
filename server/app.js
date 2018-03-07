@@ -12,10 +12,11 @@ const cors = require('cors');
 const auth = require('./routes/auth');
 const animal = require('./routes/animal');
 const support = require('./routes/panel');
+const dotenv = require('dotenv').load();
 
 const app = express();
 
-mongoose.connect(dbURL)
+mongoose.connect(process.env.MONGODB_URI)
         .then(()=> console.log("Connected to DB"))
         .catch(e => console.error(e));
 
@@ -56,6 +57,13 @@ require('./passport')(app)
 app.use('/api/animal', animal);
 app.use('/api/auth', auth);
 app.use('/api/support', support);
+
+//carga el html cuando se desployamos en heroku
+
+app.use(function(req, res){
+  res.sendfile(__dirname + "/public/index.html")
+})
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
