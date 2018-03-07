@@ -1,29 +1,24 @@
 <app-nav-bar></app-nav-bar>
 <section id="signup" class="container-fluid">
-	<div class="row">
-		<div class="div-signup col-md-6">
-			<img src="http://via.placeholder.com/800x1000" alt="">
-		</div>
-		<div class="div-form col-md-6">
-			<div class="div-form">
-				<h1> Sign up </h1>
-				<form>
-					<label> Username </label>
-					<input type="text" [(ngModel)]="username" name="username" require/>
-					<label> email </label>
-					<input type="email" [(ngModel)]="email" name="email" require/>
-					<label> Password </label>
-					<input type="password" [(ngModel)]="password" name="password" require/>
-					<!-- <input type="text" [(ngModel)]="photo" name="photo" hidden/> -->
-					
-					<div>
-						<button (click)="signup()"> signup </button>
-					</div>
-				</form>
-				<span>you have an user acount alredy?
-					<a [routerLink]="['/login']">Login</a>
-				</span>
-				<p *ngIf="error" class="error"> {{ error }} </p>
+	<div class="container">
+		<div class="row">
+			<h1 class="col-md-12">SIGN UP</h1>
+			<div class="div-form col-md-4">
+				<div class="div-form">
+					<form>
+						<input type="text" [(ngModel)]="username" name="username" placeholder="Username" require/>
+						<input type="email" [(ngModel)]="email" name="email" placeholder="Email" require/>
+						<input type="password" [(ngModel)]="password" name="password" placeholder="Password" require/>
+						<div>
+							<a class="signup" (click)="signup()"> sign up </a> <i class="ion-android-arrow-up"></i>
+						</div>
+					</form>
+					<span>
+						you have an user acount already?
+						<a [routerLink]="['/login']">Login</a>
+					</span>
+					<p *ngIf="error" class="error"> {{ error }} </p>
+				</div>
 			</div>
 		</div>
 	</div>
