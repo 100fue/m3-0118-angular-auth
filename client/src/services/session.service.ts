@@ -4,6 +4,9 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { Observable } from 'rxjs/Rx';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { environment }  from '../environments/environment';
+
+const  BASEURL:string= environment.BASEURL;
 
 interface User {
   username: string,
