@@ -1,11 +1,7 @@
 const mongoose = require('mongoose');
 const Animal = require('../models/Animal');
 const User = require('../models/User');
-const dbName = 'project3';
-
-mongoose.connect(`mongodb://localhost/${dbName}`)
-    .then(res=>console.log(`conected to ${dbName}`))
-    .catch(err=>console.log(err));
+const {dbURL} = require('../config');
 
 mongoose.Promise = Promise;
 
