@@ -6,8 +6,6 @@ import { Observable } from 'rxjs/Rx';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { environment }  from '../environments/environment';
 
-const  BASEURL:string= environment.BASEURL;
-
 interface User {
   username: string,
   password: string
@@ -16,7 +14,7 @@ interface User {
 @Injectable()
 export class SessionService {
 
-  dbName: string = "http://localhost:3000"
+  dbName:string= environment.BASEURL;
   options: object = { withCredentials: true };
 
   constructor(private http: Http) {

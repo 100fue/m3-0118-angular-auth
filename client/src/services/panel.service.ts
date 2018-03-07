@@ -5,12 +5,10 @@ import 'rxjs/add/operator/catch';
 import { Observable } from 'rxjs/Rx';
 import { environment }  from '../environments/environment';
 
-const  BASEURL:string= environment.BASEURL;
-
 @Injectable()
 export class PanelService {
 
-    dbName: string = "http://localhost:3000"
+    dbName:string= environment.BASEURL;
     options: object = { withCredentials: true };
 
     constructor(private http: Http) { }
