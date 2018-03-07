@@ -894,7 +894,7 @@ section#signup div.div-form input{
 }
 
 section#signup div.div-form input:nth-child(3){
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 section#signup div.div-form input::placeholder{
@@ -925,7 +925,7 @@ section#signup div.div-form i{
  section#signup div.div-form form{
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 section#signup div.div-form span{
@@ -943,3 +943,90 @@ section#signup div.div-form span a{
 }
 
 /* SIGNUP */
+
+/* LOGIN */
+
+section#login{
+    height: 100vh;
+    background: url("./img/cow-home-2.png") center center no-repeat;
+    background-size: cover;
+    padding: 140px 0 80px;
+}
+
+section#login h1{
+    font-size: 30px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 50px;
+    line-height: 30px;
+}
+
+section#login h1:after{
+    width: 44px;
+    content: "";
+    border-bottom: solid 5px #fff;
+    display: block;
+    margin: 10px 0 0;
+}
+
+section#login div.div-form input{
+    border: 1px solid #fff;
+    color: #fff;
+    border-radius: 5px;
+    display: inline-block;
+    margin-bottom: 15px;
+    background: transparent;
+    padding: 20px;
+    height: 35px;
+}
+
+section#login div.div-form input:nth-child(2){
+    margin-bottom: 30px;
+}
+
+section#login div.div-form input::placeholder{
+    color: #fff;
+    font-weight: 200;
+}
+
+section#login div.div-form a.login{
+    cursor: pointer;
+    padding: 7px 53px;
+    font-size: 18px;
+    border: 2px solid #fff;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 3px 0 0 3px;
+}
+
+section#login div.div-form i{
+    padding: 2px 14px 5px;
+    background: #fff;
+    font-size: 22px;
+    color: #8bcc55;
+    display: inline-block;
+    margin-left: -5px;
+    border-radius: 0 3px 3px 0;
+}
+
+ section#login div.div-form form{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+section#login div.div-form span{
+    display: inline-block;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+section#login div.div-form span a{
+    font-weight: 400px;
+    font-size: 12px;
+    color: #fff;
+
+}
+
+/* LOGIN */
