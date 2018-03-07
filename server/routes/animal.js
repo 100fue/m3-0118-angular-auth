@@ -19,6 +19,7 @@ router.post('/list/:id/support', (req, res, next) => {
     animalId = req.params.id;
     support = req.body.support;
 
+    console.log('AAA')
     return Promise.all([
         new Support({ userId, animalId, support }).save(),
         Animal.findById(animalId),
@@ -30,7 +31,7 @@ router.post('/list/:id/support', (req, res, next) => {
 
     })
     .catch(e => {
-        console.log(e);
+        console.log('Error => ', e);
         res.status(500).json(e)
     })
 });
