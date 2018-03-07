@@ -19,7 +19,6 @@ router.post('/list/:id/support', (req, res, next) => {
     animalId = req.params.id;
     support = req.body.support;
 
-    console.log('AAA')
     return Promise.all([
         new Support({ userId, animalId, support }).save(),
         Animal.findById(animalId),
