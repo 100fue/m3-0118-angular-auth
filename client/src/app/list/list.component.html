@@ -3,13 +3,16 @@
 <section id="list" class="container-fluid">
 	<div class="container">
 		<div class="row">
+			<h1 class="col-md-12">SAVE A COW <span>THEY DON´T HAVE TIME</span></h1>
 			<article class="col-md-4" *ngFor="let l of list">
 				<div class="div-art">
 					<div class="div-img">
 						<img src="{{ l.photos }}" alt="{{ l.name }}">
 					</div>
 					<h2> {{ l.name }} </h2>
-					<span [innerHTML]="l.timer"></span>
+					<div class="timer">
+						<span [innerHTML]="l.timer"></span>
+					</div>
 					<div class="div-a">
 						<a [routerLink]="['/', 'list', l._id]"> RECIPE </a>
 						<i class="ion-heart"></i>

@@ -12,13 +12,19 @@ nav{
     width: 100%;
     position: fixed!important;
     z-index: 9;
+    background: #23272b!important;
 }
 
 .nav-link{
     font-size: 12px;
     margin-left: 20px;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
+    color: #fff;
+}
+
+.nav-link:hover{
+    color: #fff!important;
 }
 
 nav div#nav{
@@ -36,6 +42,30 @@ nav ul li img{
 nav ul li.df{
     display: flex;
 } 
+
+nav ul li a.login{
+    background: #8bcc55;
+    border-radius: 3px 0 0 3px;
+    padding-left: 20px!important;
+    padding-right: 20px!important;
+}
+
+nav ul li a.signup{
+    margin-left: 0;
+    background: #f4c04d;
+    border-radius: 0 3px 3px 0;
+    padding-left: 20px!important;
+    padding-right: 20px!important;
+}
+
+nav ul li a.logout{
+    color: #fff!important;
+    cursor: pointer;
+    background: rgb(202, 73, 73);
+    border-radius: 3px;
+    padding-left: 20px!important;
+    padding-right: 20px!important;
+}
 
 /* NAV */
 
@@ -162,6 +192,28 @@ section#list{
     background: #f0f0f2;
 }
 
+section#list h1{
+    font-size: 30px;
+    font-weight: 600;
+    color: #f4c04d;
+    margin-bottom: 50px;
+    line-height: 30px;
+}
+
+section#list h1 span{
+    color: #352e2c;
+    display: block;
+    text-transform: uppercase;
+}
+
+section#list h1:after{
+    width: 44px;
+    content: "";
+    border-bottom: solid 5px #8dcc55;
+    display: block;
+    margin: 10px 0 0;
+}
+
 section#list article{
     margin-bottom: 40px;
     text-align: center;
@@ -180,20 +232,27 @@ section#list article div.div-art h2{
 }
 
 
-section#list article div.div-art span{
-    margin-bottom: 10px;
+section#list article div.div-art div.timer{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid #ececec;
+    border-bottom: 1px solid #ececec;
+    margin-top: 25px;
+}
+
+section#list article div.div-art div.timer span{
     display: inline-block;
     color: #352e2c;
     font-weight: 600;
+    font-size: 20px;
 }
 
-section#list article div.div-art span span{
+section#list article div.div-art div.timer span span{
     color: #8bcc55;
     font-weight: 400;
 }
 section#list article div.div-art div.div-a{
     padding: 30px 0;
-    border-top: 1px solid #ececec;
 }
 
 section#list article div.div-art div.div-a a{

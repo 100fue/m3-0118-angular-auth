@@ -13,6 +13,7 @@ let loginPromise = (req, user) => {
 
 /* SIGNUP */
 router.post('/signup', (req, res, next) => {
+  console.log('QQQQQQ')
   const { username, password, email } = req.body;
   if (!username || !password) return res.status(400).json({ message: 'Provide username and password' })
   User.findOne({ username }, '_id')
@@ -23,11 +24,15 @@ router.post('/signup', (req, res, next) => {
       const theUser = new User({
         username,
         password: hashPass,
-        email
+        email,
+        photo: "http://spr.net.br/spr/wp-content/uploads/bfi_thumb/placeholder-295x30011-n9l7zgfwdyhh45cftdmnqx64iatq18rbpz910gx2bw.png"
       });
-      return theUser.save()
+      console.log(theUser)
+      theUser.save()
         // .then(user => loginPromise(req,user))
         .then(user => {
+          console.log('AAAA')
+          console.log(user)
           debug(`Registered user ${user._id}. Welcome ${user.username}`);
           req.user = user
           res.status(200).json(req.user)

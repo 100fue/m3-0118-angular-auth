@@ -1,32 +1,36 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav" aria-controls="nav" aria-expanded="false"
-        aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="nav">
-        <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" [routerLink]="['/']">Home
-                    <span class="sr-only">(current)</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/list']">Save</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" *ngIf="!isAuthenticated" [routerLink]="['/login']">Login</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" *ngIf="!isAuthenticated" [routerLink]="['/signup']">Signup</a>
-            </li>
-            <li class="nav-item df" *ngIf="isAuthenticated">
-                <a class="nav-link" [routerLink]="['/panel']">{{user?.username}}</a>
-                <img [src]="user?.photo" alt="">
-            </li>
-            <li class="nav-item" *ngIf="isAuthenticated">
-                <a class="nav-link" (click)="logout()"> Logout </a>
-            </li>
-        </ul>
+<nav class="navbar navbar-expand-lg container-cluid">
+    <div class="container">
+        
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav" aria-controls="nav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" [routerLink]="['/']">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/list']">Save</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link login" *ngIf="!isAuthenticated" [routerLink]="['/login']">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link signup" *ngIf="!isAuthenticated" [routerLink]="['/signup']">Sign up</a>
+                    </li>
+                    <li class="nav-item df" *ngIf="isAuthenticated">
+                        <a class="nav-link" [routerLink]="['/panel']">{{user?.username}}</a>
+                        <img [src]="user?.photo" alt="">
+                    </li>
+                    <li class="nav-item" *ngIf="isAuthenticated">
+                        <a class="nav-link logout" (click)="logout()">Log out</a>
+                    </li>
+                </ul>
+
+        </div>
     </div>
 </nav>

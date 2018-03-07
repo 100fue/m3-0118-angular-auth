@@ -25,10 +25,6 @@ export class SessionService {
   // you can emit new users and will always have a default value
   public user = new BehaviorSubject(null);
 
-  // getUser() {
-  //   return this.user;
-  // }
-
   handleError(e) {
     console.log(e);
     return Observable.throw(e.message);
