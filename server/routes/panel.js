@@ -6,28 +6,11 @@ const Support = require('../models/Support');
 const bcrypt = require('bcrypt');
 const debug = require('debug')("server:panel");
 
-
-router.get('/panel/:id', (req, res, next) => {
-    const userId = req.params.id
-    Support.find({ userId: userId })
-        .populate('animalId')
-        .then(support => {
-            console.log("support")
-            console.log(support)
-            res.json(support).status(200);
-        })
-        .catch(err => res.json(err).status(500));
-});
-
 router.post('/panel/:id/username', (req, res, next) => {
     const { username } = req.body;
     const userId = req.params.id;
-
-    const theUser = new User({
-        username
-    });
-
-    User.findByIdAndUpdate({ userId: userId }, { theUser }, { new: true })
+    console.log('=====', username, userId)
+    User.findByIdAndUpdate(userId, { username }, { new: true })
         .then(updatedUser => {
             debug(`Changes user ${updatedUser._id}. Change ${updatedUser.username}`);
             req.user = updatedUser
@@ -39,6 +22,8 @@ router.post('/panel/:id/username', (req, res, next) => {
         })
 });
 
+
+
 router.post('/panel/:id/password', (req, res, next) => {
     const { password } = req.body;
     const userId = req.params.id;
@@ -49,7 +34,7 @@ router.post('/panel/:id/password', (req, res, next) => {
         password: hashPass
     });
 
-    User.findByIdAndUpdate({ userId: userId }, { theUserPassword }, { new: true })
+    User.findByIdAndUpdate(userId, { theUserPassword }, { new: true })
         .then(updatedUser => {
             debug(`Changes user ${updatedUser._id}. Change ${updatedUser.password}`);
             req.user = updatedUser
@@ -59,6 +44,18 @@ router.post('/panel/:id/password', (req, res, next) => {
             console.log(e);
             res.status(500).json(e)
         })
+});
+
+router.get('/panel/:id', (req, res, next) => {
+    const userId = req.params.id
+    Support.find({ userId: userId })
+        .populate('animalId')
+        .then(support => {
+            console.log("support")
+            console.log(support)
+            res.json(support).status(200);
+        })
+        .catch(err => res.json(err).status(500));
 });
 
 module.exports = router;

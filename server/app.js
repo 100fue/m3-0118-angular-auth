@@ -12,11 +12,11 @@ const cors = require('cors');
 const auth = require('./routes/auth');
 const animal = require('./routes/animal');
 const support = require('./routes/panel');
-const dotenv = require('dotenv').load();
+//const dotenv = require('dotenv').load();
 
 const app = express();
 
-mongoose.connect(process.env.MONGODB_URI)
+mongoose.connect(dbURL)
         .then(()=> console.log("Connected to DB"))
         .catch(e => console.error(e));
 

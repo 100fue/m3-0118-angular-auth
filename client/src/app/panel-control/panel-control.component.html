@@ -30,18 +30,17 @@
 					<div id="div-form" class="col-md-4">
 						<img src="{{user?.photo}}" alt="">
 						<div class="div-form-1">
-							<form>
+							<div>
 								<div class="form-group">
-									<input type="text" class="form-control" ([ngModel])="username" placeholder="Change Username">
+									<input type="text" class="form-control" [(ngModel)]="user.username" placeholder="Change Username">
 								</div>
 								<div id="div-button">
 									<a (click)="changeUsername()"><i class="ion-android-arrow-down"></i></a>
-									
 								</div>
-							</form>
+							</div>
 						</div>
 						<div class="div-form-2">
-							<form action="/panel" method="POST">
+							<div>
 								<div class="form-group">
 									<input type="password" class="form-control" placeholder="Change 	Password">
 								</div>
@@ -54,7 +53,7 @@
 										<i class="ion-android-arrow-down"></i>
 									</a>
 								</div>
-							</form>
+							</div>
 						</div>
 					</div>
 				</div>

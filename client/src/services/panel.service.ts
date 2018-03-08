@@ -24,6 +24,8 @@ export class PanelService {
     }
 
     changeUsername(id, username){
+        console.log('AAAA')
+        console.log(id, username)
         return this.http.post(`${this.dbName}/api/support/panel/${id}/username`, {username}, this.options)
         .map((res) => res.json());
     }

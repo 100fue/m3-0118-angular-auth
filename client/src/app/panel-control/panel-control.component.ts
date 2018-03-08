@@ -12,7 +12,6 @@ export class PanelControlComponent implements OnInit {
 
   user: any;
   support
-  username
   error
 
 
@@ -34,8 +33,9 @@ export class PanelControlComponent implements OnInit {
   }
 
   changeUsername() {
-    this.sessionPanel.changeUsername(this.user._id, this.username)
+    this.sessionPanel.changeUsername(this.user._id, this.user.username)
       .subscribe(data => {
+        this.user = data
         console.log(data)
         this.router.navigate(['panel'])
       });

@@ -51,6 +51,10 @@ nav ul li a.login{
     padding-right: 20px!important;
 }
 
+nav img{
+    width: 120px;
+}
+
 nav ul li a.signup{
     margin-left: 0;
     background: #f4c04d;
@@ -82,13 +86,12 @@ section#banner{
     height: 100vh;
     background: url("./img/cow-home.png") center center no-repeat fixed;
     background-size: cover; 
-    position: relative;
+    position: relative;   
 }
 
 section#banner div#cont{
     position: absolute;
     top: 50%;
-    left: 100px;
     transform: translateY(-50%);
 }
 
@@ -196,7 +199,7 @@ section#banner-2 div.cont-sec2 p{
 section#list{
     padding-top: 140px;
     padding-bottom: 80px;
-    background: #f0f0f2;
+    background: #efefef;
 }
 
 section#list h1{
@@ -248,8 +251,8 @@ section#list article div.div-art h2{
 section#list article div.div-art div.timer{
     padding-top: 20px;
     padding-bottom: 20px;
-    border-top: 1px solid #ececec;
-    border-bottom: 1px solid #ececec;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
     margin-top: 25px;
 }
 
@@ -1143,3 +1146,20 @@ section#login div.div-form span a{
 }
 
 /* LOGIN */
+
+/* FOOTER */
+
+footer{
+    padding: 20px;
+    text-align: center;
+    background: #32383e;
+}
+
+footer p{
+    color: #fff;
+    font-size: 12px;
+    font-weight: 300;
+    margin-bottom: 0;
+}
+
+/* FOOTER */
