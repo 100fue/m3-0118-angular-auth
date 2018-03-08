@@ -29,4 +29,11 @@ export class PanelService {
         return this.http.post(`${this.dbName}/api/support/panel/${id}/username`, {username}, this.options)
         .map((res) => res.json());
     }
+
+    changeUserPass(id, password){
+        console.log('AAAA')
+        console.log(id, password)
+        return this.http.post(`${this.dbName}/api/support/panel/${id}/password`, {password}, this.options)
+        .map((res) => res.json());
+    }
 }

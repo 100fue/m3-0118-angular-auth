@@ -41,4 +41,12 @@ export class PanelControlComponent implements OnInit {
       });
   }
 
+  changeUserPass() {
+    this.sessionPanel.changeUserPass(this.user._id, this.user.password)
+      .subscribe(data => {
+        this.user = data
+        this.router.navigate(['panel'])
+      });
+  }
+
 }

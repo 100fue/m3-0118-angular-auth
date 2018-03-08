@@ -19,7 +19,6 @@ router.get('/', (req, res, next) => {
 
 /* SIGNUP */
 router.post('/signup', (req, res, next) => {
-  console.log('QQQQQQ')
   const { username, password, email } = req.body;
   if (!username || !password) return res.status(400).json({ message: 'Provide username and password' })
   User.findOne({ username }, '_id')
@@ -33,15 +32,13 @@ router.post('/signup', (req, res, next) => {
         email,
         photo: "http://spr.net.br/spr/wp-content/uploads/bfi_thumb/placeholder-295x30011-n9l7zgfwdyhh45cftdmnqx64iatq18rbpz910gx2bw.png"
       });
-      console.log(theUser)
       theUser.save()
         // .then(user => loginPromise(req,user))
         .then(user => {
-          console.log('AAAA')
-          console.log(user)
           debug(`Registered user ${user._id}. Welcome ${user.username}`);
           req.user = user
-          res.status(200).json(req.user)
+          req.login(user, e => e ? reject(e) : res.status(200).json(req.user))
+          // res.status(200).json(req.user)
         })
     })
     .catch(e => {
@@ -51,11 +48,12 @@ router.post('/signup', (req, res, next) => {
 });
 
 /* LOGIN */
+
 router.post('/login', (req, res, next) => {
-  passport.authenticate('local', (err, theUser, failureDetails) => {
+  passport.authenticate('local', (err, user, failureDetails) => {
     if (err) return res.status(500).json({ message: 'Something went wrong' });
-    if (!theUser) return res.status(401).json(failureDetails);
-    loginPromise(req, theUser)
+    if (!user) return res.status(401).json(failureDetails);
+    loginPromise(req, user)
       .then(() => res.status(200).json(req.user))
       .catch(e => res.status(500).json({ message: 'Something went wrong' }));
   })(req, res, next);

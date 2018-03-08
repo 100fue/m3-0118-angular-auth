@@ -42,14 +42,14 @@
 						<div class="div-form-2">
 							<div class="form">
 								<div class="form-group">
-									<input type="password" class="form-control" placeholder="Change 	Password">
+									<input type="password" class="form-control" [(ngModel)]="user.password" placeholder="Change Password">
 								</div>
 								<!-- <div class="custom-file">
 								<input type="file" class="custom-file-input" id="customFileLang" lang="es">
 									<label class="custom-file-label" for="customFileLang">Select your image profile</label>
 								</div> -->
 								<div id="div-button">
-									<a >
+									<a (click)="changeUserPass()">
 										<i class="ion-android-arrow-down"></i>
 									</a>
 								</div>

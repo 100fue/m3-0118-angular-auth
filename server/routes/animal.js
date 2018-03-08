@@ -5,9 +5,7 @@ const Support = require('../models/Support');
 
 router.get('/list', (req, res, next) => {
     Animal.find()
-        .then(animals => {
-            res.json(animals).status(200);
-        })
+        .then(animals => res.json(animals).status(200))
         .catch(err => res.json(err).status(500));
 });
 
@@ -19,6 +17,7 @@ router.post('/list/:id/support', (req, res, next) => {
     animalId = req.params.id;
     support = req.body.support;
 
+    console.log(userId, animalId, support);
     return Promise.all([
         new Support({ userId, animalId, support }).save(),
         Animal.findById(animalId),
@@ -26,12 +25,13 @@ router.post('/list/:id/support', (req, res, next) => {
     .then(([newSupport, animal]) => {
         const newAnimalTime = getNewAnimalTime(animal, newSupport);
         return Animal.findByIdAndUpdate(animalId, { time: newAnimalTime }, { new: true })
-            .then((animal) => res.status(200).json(animal));
+            .then((animal) => res.status(200).json(animal))
+            .catch((err) => console.log(err, "1"));
 
     })
-    .catch(e => {
+    .catch((e) => {
         console.log('Error => ', e);
-        res.status(500).json(e)
+        res.status(500).json(e);
     })
 });
 
@@ -50,11 +50,6 @@ function getNewAnimalTime(animal, newSupport) {
     const oneHour = 3600000;
     let sum = countDownDate;
 
-    console.log(animal);
-    console.log(animal.time);
-    console.log(newSupport);
-
-    console.log(newSupport.support);
     switch (newSupport.support) {
         case 5:
             sum = (oneHour * 11) + countDownDate;
@@ -67,7 +62,6 @@ function getNewAnimalTime(animal, newSupport) {
             break;
     }
 
-    console.log(sum);
     let curdate = new Date(sum);
     return curdate.toLocaleString();
 }
