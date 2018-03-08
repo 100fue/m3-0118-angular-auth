@@ -76,4 +76,19 @@ export class SessionService {
       }
     });
   }
+
+  auth(): Observable<any> {
+    return this.http.get(`${this.dbName}/api/auth`, this.options)
+      .map(res => res.json())
+      .map((user) => {
+        // emit the new user to the behaviour subject
+        this.user.next(user);
+        console.log(`Setting user, welcome ${user.username}`);
+        return {success: true};
+      })
+      .catch(() => {
+        return Observable.of({success: false});
+      });
+  }
+ 
 }

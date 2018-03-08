@@ -855,6 +855,19 @@ section#support article i{
     border: 1px solid #fff;
 }
 
+section#support article div.modal h5{
+    color:#8bcc55;
+}
+
+section#support article div.modal form{
+    text-align-last: left;
+}
+
+section#support article div.modal form label{
+    color: #8bcc55;
+    font-size: 14px;
+}
+
 /* SUPPORT */
 
 /* SIGNUP */
