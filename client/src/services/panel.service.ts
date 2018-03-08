@@ -22,4 +22,9 @@ export class PanelService {
         return this.http.get(`${this.dbName}/api/support/panel/${id}`, this.options)
         .map((res) => res.json());
     }
+
+    changeUsername(id, username){
+        return this.http.post(`${this.dbName}/api/support/panel/${id}/username`, {username}, this.options)
+        .map((res) => res.json());
+    }
 }

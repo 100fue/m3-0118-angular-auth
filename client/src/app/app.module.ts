@@ -17,6 +17,7 @@ import { AppRoutingModule } from './routes';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { SingleAnimalComponent } from './single-animal/single-animal.component';
 import { SupportComponent } from './support/support.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
  declarations: [
@@ -29,6 +30,7 @@ import { SupportComponent } from './support/support.component';
    SupportComponent,
    PanelControlComponent,
    NavBarComponent,
+   FooterComponent,
 
    // CommonModule
  ],

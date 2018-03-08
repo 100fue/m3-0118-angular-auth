@@ -228,6 +228,12 @@ section#list article{
 
 section#list article div.div-art{
     background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 3px 3px 3px 3px;
+}
+
+section#list article div.div-art img{
+    border-radius: 3px 3px 0 0;
 }
 
 section#list article div.div-art h2{
@@ -413,7 +419,7 @@ section#single-animal div.img-an-lat div h2 span:after{
 
 section#single-animal div.img-an-lat div a{
     background: #352e2c;
-    padding: 7px 30px;
+    padding: 7px 20px;
     font-size: 20px;
     color: #fff;
     text-transform: uppercase;
@@ -633,27 +639,32 @@ section#panel-control div#content-panel-control div#div-form img{
     border-radius: 50%;
 }
 
-section#panel-control div#content-panel-control div#div-form form{
-    margin-top: 30px;
+
+.div-form-1 .form-group, .div-form-2 .form-group{
+    margin-bottom: 0!important;
+} 
+
+.div-form-1 form, .div-form-2 form{
+    display: flex;
+    justify-content: center;
 }
 
-section#panel-control div#content-panel-control div#div-form form div#div-button{
-    margin-top: 30px;
+.div-form-1 form input::placeholder, .div-form-2 form input::placeholder{
+    font-size: 12px;
+    font-weight: 200;
 }
 
-section#panel-control div#content-panel-control div#div-form form div#div-button a{
-    background: #352e2c;
-    padding: 7px 30px;
-    font-size: 18px;
-    color: #fff;
-    text-transform: uppercase;
-    border-radius: 3px 0 0 3px;
-    -webkit-appearance: unset!important;
+.div-form-1 form{
+    margin-top: 30px;   
+}
+
+.div-form-2 form{
+    margin-top: 15px;
 }
 
 section#panel-control div#content-panel-control div#div-form form div#div-button i{
-    padding: 0 14px 3px;
-    background: #f4c04d;
+    padding: 0 14px 5px;
+    background: #8bcc55;
     font-size: 22px;
     color: #fff;
     display: inline-block;
@@ -674,8 +685,13 @@ section#panel-control div#content-panel-control h2 i{
     color: #f4c04d;
 }
 
+#div-button a{
+    cursor: pointer;
+}
+
 section#panel-control div#content-panel-control div.div-art{
     display: flex;
+    flex-wrap: wrap;
 }
 
 section#panel-control div#content-panel-control article{
@@ -684,6 +700,7 @@ section#panel-control div#content-panel-control article{
     border: 1px solid #ddd;
     border-radius: 5px;
     padding-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 section#panel-control div#content-panel-control article img{
