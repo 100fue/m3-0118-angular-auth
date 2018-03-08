@@ -68,6 +68,12 @@ nav ul li a.logout{
     padding-right: 20px!important;
 }
 
+nav ul li a.user,
+nav ul li a.user:hover{
+    color: #f4c04d;
+}
+
+
 /* NAV */
 
 /* HOME */
@@ -431,7 +437,7 @@ section#single-animal div.cont-inf-map{
 }
 
 section#single-animal div.cont-inf-map div.cont-inf{
-    background: #efefef;
+    background: #32383e;
     padding-left: 15px;
     background-clip: content-box;   
 }
@@ -439,7 +445,7 @@ section#single-animal div.cont-inf-map div.cont-inf{
 section#single-animal div.cont-inf div.div-inf{
     display: flex;
     padding: 15px 40px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #2b2b2b;
     color: #352e2c;
     font-weight: 300;
     font-size: 22px;
@@ -456,7 +462,7 @@ section#single-animal div.cont-inf i{
 }
 
 section#single-animal div.cont-inf div.div-inf h2{
-    color: #afafaf;
+    color: #8bcc55;
     font-size: 16px;
     font-weight: 400;
     margin-top: 4px;
@@ -464,8 +470,10 @@ section#single-animal div.cont-inf div.div-inf h2{
 
 section#single-animal div.cont-inf div.div-inf span{
     display: inline-block;
-    line-height: 25px;
-    font-size: 20px;
+    line-height: 19px;
+    font-size: 15px;
+    color: #fff;
+    font-weight: 200;
 }
 
 agm-map {
@@ -613,6 +621,10 @@ section#panel-control div#content-panel-control div#div-form{
     left: 50%;
     transform: translate(-50%,-50%);
     text-align: center;
+    padding: 30px;
+    background: #fff;
+    border-radius: 3px;
+    border: 1px solid #ddd;
 }
 
 section#panel-control div#content-panel-control div#div-form img{
@@ -640,7 +652,7 @@ section#panel-control div#content-panel-control div#div-form form div#div-button
 }
 
 section#panel-control div#content-panel-control div#div-form form div#div-button i{
-    padding: 2px 14px 3px;
+    padding: 0 14px 3px;
     background: #f4c04d;
     font-size: 22px;
     color: #fff;
@@ -668,22 +680,60 @@ section#panel-control div#content-panel-control div.div-art{
 
 section#panel-control div#content-panel-control article{
     text-align: center;
-    padding: 40px 20px;
     background: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
+    padding-bottom: 20px;
 }
 
 section#panel-control div#content-panel-control article img{
-    border-radius: 50%;
+    border-radius: 3px 3px 0 0;
 }
 
 section#panel-control div#content-panel-control article h3{
-    margin-top: 20px;
+    margin-top: 30px;
+    font-size: 25px;
+    font-weight: 600;
+    color: #352e2c;
+    text-transform: capitalize;
 }
 
 section#panel-control div#content-panel-control article p{
-    margin-bottom: 0;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    color: #f4c04d;
+    font-size: 45px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #ececec;
+    border-bottom: 1px solid #ececec;
+
+}
+
+section#panel-control div#content-panel-control article p span{
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+section#panel-control div#content-panel-control article a{
+    background: #352e2c;
+    padding: 7px 30px;
+    font-size: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 3px 0 0 3px;
+}
+
+section#panel-control div#content-panel-control article i{
+    padding: 2px 14px 3px;
+    background: #f4c04d;
+    font-size: 22px;
+    color: #ffffff;
+    display: inline-block;
+    margin-left: -5px;
+    border-radius: 0 3px 3px 0;
 }
 
 /* PANEL CONTROL */
@@ -856,7 +906,7 @@ section#support article i{
 }
 
 section#support article div.modal h5{
-    color:#8bcc55;
+    color: #f4c04d;
 }
 
 section#support article div.modal form{
@@ -864,8 +914,41 @@ section#support article div.modal form{
 }
 
 section#support article div.modal form label{
-    color: #8bcc55;
-    font-size: 14px;
+    color: #23272b;
+    font-size: 12px;
+    font-weight: 200;
+}
+
+section#support article div.modal form div.flex-div{
+    display: flex;
+    justify-content: space-between;
+}
+
+section#support article div.modal form div.flex-div div.ex-m,
+section#support article div.modal form div.flex-div div.ex-y{
+    width: 270px;
+    margin-right: 20px;
+}
+
+section#support article div.modal form a{
+    background: #f4c04d;
+    padding: 7px 30px;
+    font-size: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 3px 0 0 3px;
+}
+
+section#support article div.modal form i{
+    padding: 2px 14px 3px;
+    background: #352e2c;
+    font-size: 22px;
+    color: #fff;
+    display: inline-block;
+    margin-left: -5px;
+    border-radius: 0 3px 3px 0;
+    border: none;
 }
 
 /* SUPPORT */

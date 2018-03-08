@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg container-cluid">
     <div class="container">
         
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" [routerLink]="['/']">Navbar</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav" aria-controls="nav" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -14,7 +14,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" [routerLink]="['/list']">Save</a>
+                        <a class="nav-link" [routerLink]="['/list']">Save a cow</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link login" *ngIf="!isAuthenticated" [routerLink]="['/login']">Log in</a>
@@ -23,7 +23,7 @@
                         <a class="nav-link signup" *ngIf="!isAuthenticated" [routerLink]="['/signup']">Sign up</a>
                     </li>
                     <li class="nav-item df" *ngIf="isAuthenticated">
-                        <a class="nav-link" [routerLink]="['/panel']">{{user?.username}}</a>
+                        <a class="nav-link user" [routerLink]="['/panel']">{{user?.username}}</a>
                         <img [src]="user?.photo" alt="">
                     </li>
                     <li class="nav-item" *ngIf="isAuthenticated">

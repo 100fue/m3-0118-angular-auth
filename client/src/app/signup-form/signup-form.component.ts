@@ -27,7 +27,7 @@ export class SignupFormComponent implements OnInit {
       .catch(e => this.error = e)
       .subscribe(data => {
         console.log(data)
-        this.router.navigate(['login'])
+        this.router.navigate(['list'])
       });
   }
 }
