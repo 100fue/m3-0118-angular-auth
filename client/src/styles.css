@@ -536,6 +536,10 @@ section#panel-control aside div#logo-panel{
     padding-bottom: 40px;
 }
 
+section#panel-control aside div#logo-panel img{
+    width: 150px;
+}
+
 section#panel-control aside div#user-panel{
     text-align: center;
     padding-top: 40px;
@@ -647,25 +651,25 @@ section#panel-control div#content-panel-control div#div-form img{
     margin-bottom: 0!important;
 } 
 
-.div-form-1 form, .div-form-2 form{
+.div-form-1 .form, .div-form-2 .form{
     display: flex;
     justify-content: center;
 }
 
-.div-form-1 form input::placeholder, .div-form-2 form input::placeholder{
+.div-form-1 .form input::placeholder, .div-form-2 .form input::placeholder{
     font-size: 12px;
     font-weight: 200;
 }
 
-.div-form-1 form{
+.div-form-1 .form{
     margin-top: 30px;   
 }
 
-.div-form-2 form{
+.div-form-2 .form{
     margin-top: 15px;
 }
 
-section#panel-control div#content-panel-control div#div-form form div#div-button i{
+section#panel-control div#content-panel-control div#div-form .form div#div-button i{
     padding: 0 14px 5px;
     background: #8bcc55;
     font-size: 22px;
